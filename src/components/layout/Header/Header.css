@@ -47,6 +47,7 @@
   justify-content: space-between;
   text-transform: uppercase;
   flex: 1;
+  gap: clamp(1.5rem, 3vw, 5.25rem);
   margin-left: var(--space-4xl);
 }
 
