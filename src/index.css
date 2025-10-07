@@ -1,0 +1,7 @@
+/* Import CSS Variables */
+@import './assets/styles/variables.css';
+
+/* Global styles */
+@import './assets/styles/globals.css';
+
+/* Project-specific styles can be added here */

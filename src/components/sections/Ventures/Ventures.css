@@ -1,0 +1,111 @@
+.ventures {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ventures__video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: var(--grey-lighter);
+}
+
+.ventures__video-container::before,
+.ventures__video-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  pointer-events: none;
+  z-index: 3;
+  background: linear-gradient(to bottom, var(--grey-lighter) 0%, transparent 100%);
+}
+
+.ventures__video-container::after {
+  top: auto;
+  bottom: 0;
+  background: linear-gradient(to top, var(--grey-lighter) 0%, transparent 100%);
+}
+
+.ventures__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: color-dodge;
+}
+
+.ventures__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.ventures__title {
+  font-size: clamp(30px, 5vw, 75px);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  line-height: 0.9;
+  margin: 0;
+}
+
+.ventures__description {
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ventures__cta-button {
+  padding: 0 8px;
+  font-size: clamp(22px, 3vw, 26px);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s ease;
+}
+
+.ventures__cta-icon {
+  width: 28px;
+  max-height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.ventures__cta-button:hover {
+  gap: 12px;
+}
+
+.ventures__cta-button:hover .ventures__cta-icon {
+  transform: translateX(-4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ventures__text-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ventures__title {
+    line-height: 1.1;
+    letter-spacing: -0.3px;
+  }
+}

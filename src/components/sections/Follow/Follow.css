@@ -1,0 +1,150 @@
+/* Follow Section Styles */
+.follow {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.follow__container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Header Styles */
+.follow__header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.follow__title-wrapper {
+  padding-left: 30px;
+}
+
+.follow__title {
+  font-weight: var(--font-weight-bold);
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.2;
+  letter-spacing: -0.56px;
+  margin: 0;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+/* Gallery Styles */
+.follow__gallery {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+  height: 540px;
+}
+
+/* Image Styles */
+.follow__image {
+  max-width: 20%;
+  position: relative;
+}
+
+.follow__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.follow__image--1 {
+  top: 30%;
+  transform: rotate(26deg);
+}
+
+.follow__image--2 {
+  top: 7%;
+  transform: rotate(12deg);
+}
+
+.follow__image--3 img {
+  transform: rotate(0deg);
+}
+
+.follow__image--4 {
+  top: 7%;
+  transform: rotate(-12deg);
+}
+
+.follow__image--5 {
+  top: 30%;
+  transform: rotate(-26deg);
+}
+
+.follow__actions {
+  display: flex;
+  gap: 20px;
+}
+
+.follow__link {
+  width: clamp(28px, 5vw, 48px);
+  height: clamp(28px, 5vw, 48px);
+  transition: transform 0.3s ease, color 0.3s ease;
+
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    color: var(--color-accent-hover);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1439px) {
+  .follow {
+    min-height: 0;
+  }
+
+  .follow__gallery {
+    height: 40vw;
+  }
+}
+
+@media (max-width: 1023px) {
+  .follow {
+    padding: 60px 0;
+  }
+  
+  .follow__container {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .follow {
+    padding: 40px 0;
+  }
+
+  .follow__gallery {
+    height: 60vw;
+    width: 140%;
+    margin-inline-start: -20%;
+  }
+}
+
+@media (max-width: 639px) {
+  .follow__gallery {
+    height: 100vw;
+    width: 280%;
+    margin-inline-start: -90%;
+  }
+
+  .follow__image {
+    padding: 0 10px;
+  }
+}
