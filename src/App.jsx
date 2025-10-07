@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
@@ -14,35 +15,49 @@ import { Follow } from '@/components/sections/Follow/Follow';
 import { CallToAction } from '@/components/sections/CallToAction';
 
 import { LiquidBackground, LiquidBackgroundPresets } from '@/components/common/LiquidBackground';
+import { Preloader } from '@/components/common/Preloader';
 import { useSmoothScrolling } from '@/hooks/useSmoothScrolling';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   useSmoothScrolling();
+
+  const handlePreloaderComplete = () => {
+    setIsLoading(false);
+  };
 
   return (
     <div className="app">
-      {/* Liquid background animation */}
-      <LiquidBackground 
-        {...LiquidBackgroundPresets.purple}
-        opacity={0.4}
-        zIndex={-1}
-      />
+      {/* Preloader */}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
       
-      <Header />
-      <main className="main-content">
-        <Hero />
-        <Showreel />
-        <TextAndLogo />
-        <Services />
-        <Logos />
-        <Work />
-        <Blog />
-        <Collaborations />
-        <Ventures />
-        <Follow />
-        <CallToAction />
-      </main>
-      <Footer />
+      {/* Main App Content */}
+      {!isLoading && (
+        <>
+          {/* Liquid background animation */}
+          <LiquidBackground 
+            {...LiquidBackgroundPresets.purple}
+            opacity={0.4}
+            zIndex={-1}
+          />
+          
+          <Header />
+          <main className="main-content">
+            <Hero />
+            <Showreel />
+            <TextAndLogo />
+            <Services />
+            <Logos />
+            <Work />
+            <Blog />
+            <Collaborations />
+            <Ventures />
+            <Follow />
+            <CallToAction />
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
