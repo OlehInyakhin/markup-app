@@ -128,6 +128,5 @@ src/
 │   ├── layout/         # Layout components
 │   └── sections/       # Page sections
 ├── hooks/              # Custom React hooks
-├── assets/             # Static assets
-└── utils/              # Utility functions
+└── assets/             # Static assets
 ```
