@@ -1,4 +1,3 @@
-/* Follow Section Styles */
 .follow {
   width: 100%;
   min-height: 100vh;
@@ -12,7 +11,6 @@
   gap: 80px;
 }
 
-/* Header Styles */
 .follow__header {
   display: flex;
   flex-flow: row nowrap;
@@ -35,7 +33,6 @@
   color: var(--color-text);
 }
 
-/* Gallery Styles */
 .follow__gallery {
   position: relative;
   width: 100%;
@@ -47,7 +44,6 @@
   height: 540px;
 }
 
-/* Image Styles */
 .follow__image {
   max-width: 20%;
   position: relative;
@@ -91,7 +87,9 @@
 .follow__link {
   width: clamp(28px, 5vw, 48px);
   height: clamp(28px, 5vw, 48px);
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 
   & svg {
     width: 100%;
@@ -104,7 +102,6 @@
   }
 }
 
-/* Responsive Design */
 @media (max-width: 1439px) {
   .follow {
     min-height: 0;
@@ -119,7 +116,7 @@
   .follow {
     padding: 60px 0;
   }
-  
+
   .follow__container {
     gap: 60px;
   }

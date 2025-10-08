@@ -5,10 +5,12 @@ A modern React application built with Vite, featuring smooth animations powered 
 ## How to Run/Build Locally
 
 ### Prerequisites
-- Node.js (version 16 or higher)
+
+- Node.js (version 18 or higher)
 - npm or yarn package manager
 
 ### Installation & Development
+
 ```bash
 # Clone the repository
 git clone <repository-url>
@@ -24,6 +26,7 @@ npm run dev
 ```
 
 ### Build for Production
+
 ```bash
 # Create production build
 npm run build
@@ -32,10 +35,17 @@ npm run build
 npm run preview
 ```
 
-### Linting
+### Code Quality
+
 ```bash
 # Run ESLint
 npm run lint
+
+# Format code with Prettier
+npm run format
+
+# Check code formatting
+npm run format:check
 ```
 
 ## Time Spent
@@ -113,10 +123,12 @@ npm run lint
 
 ## Technology Stack
 
-- **React 18** - Component framework
-- **Vite** - Build tool and dev server
-- **GSAP** - Animation library
-- **ESLint** - Code linting
+- **React 19** - Component framework
+- **Vite 7** - Build tool and dev server
+- **GSAP 3.13** - Animation library
+- **Swiper 12** - Touch slider component
+- **ESLint 9** - Code linting
+- **Prettier 3.6** - Code formatting
 - **CSS3** - Styling with custom properties
 
 ## Project Structure

@@ -1,4 +1,3 @@
-/* CallToAction Section Styles */
 .call-to-action {
   width: 100%;
   overflow: hidden;
@@ -65,12 +64,11 @@
   text-align: right;
   flex-shrink: 0;
 
-  [dir="rtl"] & {
+  [dir='rtl'] & {
     direction: rtl;
   }
 }
 
-/* Responsive Design */
 @media (max-width: 1279px) {
   .call-to-action__item {
     gap: 60px;
@@ -96,7 +94,7 @@
   .call-to-action__text {
     letter-spacing: 0;
   }
-  
+
   .call-to-action__item {
     display: flex;
     flex-flow: column nowrap;

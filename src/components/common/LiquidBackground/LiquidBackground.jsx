@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLiquidBackground } from '@/hooks/useLiquidBackground';
 import './LiquidBackground.css';
 export { LiquidBackgroundPresets } from './constants';
@@ -22,7 +21,7 @@ export const LiquidBackground = ({
     colors,
     blobCount,
     animationDuration,
-    enabled
+    enabled,
   });
 
   return (
@@ -39,7 +38,7 @@ export const LiquidBackground = ({
         pointerEvents: 'none',
         zIndex,
         opacity,
-        ...style
+        ...style,
       }}
       {...props}
     />

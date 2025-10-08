@@ -1,4 +1,3 @@
-// Work images and logos imports
 import workImage01 from '@/assets/images/work/work-image-01.png';
 import workImage02 from '@/assets/images/work/work-image-02.png';
 import workImage03 from '@/assets/images/work/work-image-03.png';
@@ -8,7 +7,6 @@ import workLogo02 from '@/assets/images/work/work-logo-02.svg';
 import workLogo03 from '@/assets/images/work/work-logo-03.svg';
 import workLogo04 from '@/assets/images/work/work-logo-04.svg';
 
-// Projects data configuration
 export const projects = [
   {
     id: 1,
@@ -16,7 +14,7 @@ export const projects = [
     logo: workLogo02,
     title: 'שם פרויקט',
     description: 'הסבר בשתי מילים על הפרויקט',
-    tags: ['אתרים', 'מיתוג']
+    tags: ['אתרים', 'מיתוג'],
   },
   {
     id: 2,
@@ -24,7 +22,7 @@ export const projects = [
     logo: workLogo03,
     title: 'שם פרויקט',
     description: 'הסבר בשתי מילים על הפרויקט',
-    tags: ['עיצוב', 'אפליקציות']
+    tags: ['עיצוב', 'אפליקציות'],
   },
   {
     id: 3,
@@ -32,7 +30,7 @@ export const projects = [
     logo: workLogo04,
     title: 'שם פרויקט',
     description: 'הסבר בשתי מילים על הפרויקט',
-    tags: ['מיתוג', 'אתרים']
+    tags: ['מיתוג', 'אתרים'],
   },
   {
     id: 4,
@@ -40,6 +38,6 @@ export const projects = [
     logo: workLogo01,
     title: 'Feeel',
     description: 'הסבר בשתי מילים על הפרויקט',
-    tags: ['UX/UI', 'פיתוח אינטגרציות ו-API', 'פיתוח פלטפורמת סחר']
-  }
+    tags: ['UX/UI', 'פיתוח אינטגרציות ו-API', 'פיתוח פלטפורמת סחר'],
+  },
 ];

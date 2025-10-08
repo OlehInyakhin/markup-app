@@ -1,21 +1,25 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-/**
- * Custom hook for GSAP-powered logo carousel animations
- * Provides continuous scrolling animation for logo tracks
- */
-export const useLogosAnimation = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+export const useLogosAnimation = sectionRef => {
   const trackRefs = useRef([]);
   const animationsRef = useRef([]);
+  const scrollTriggerRef = useRef(null);
 
-  const addTrackRef = (el) => {
+  const addTrackRef = el => {
     if (el && !trackRefs.current.includes(el)) {
       trackRefs.current.push(el);
     }
   };
 
-  const initializeTrackAnimation = (trackElement, direction = 'left', duration = 60) => {
+  const initializeTrackAnimation = (
+    trackElement,
+    direction = 'left',
+    duration = 60
+  ) => {
     if (!trackElement) return;
 
     const trackWidth = trackElement.scrollWidth;
@@ -30,8 +34,8 @@ export const useLogosAnimation = () => {
         ease: 'none',
         repeat: -1,
         modifiers: {
-          x: gsap.utils.unitize(x => parseFloat(x) % moveDistance)
-        }
+          x: gsap.utils.unitize(x => parseFloat(x) % moveDistance),
+        },
       });
     } else {
       gsap.set(trackElement, { x: -moveDistance });
@@ -41,8 +45,8 @@ export const useLogosAnimation = () => {
         ease: 'none',
         repeat: -1,
         modifiers: {
-          x: gsap.utils.unitize(x => parseFloat(x) % moveDistance)
-        }
+          x: gsap.utils.unitize(x => parseFloat(x) % moveDistance),
+        },
       });
     }
 
@@ -57,6 +61,19 @@ export const useLogosAnimation = () => {
         initializeTrackAnimation(track, direction, 60);
       }
     });
+
+    // Setup ScrollTrigger for viewport visibility
+    if (sectionRef?.current) {
+      scrollTriggerRef.current = ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top bottom',
+        end: 'bottom top',
+        onEnter: () => resumeAnimations(),
+        onLeave: () => pauseAnimations(),
+        onEnterBack: () => resumeAnimations(),
+        onLeaveBack: () => pauseAnimations(),
+      });
+    }
   };
 
   const pauseAnimations = () => {
@@ -84,7 +101,7 @@ export const useLogosAnimation = () => {
         animation.pause();
       }
     };
-    
+
     const handleMouseLeave = () => {
       const animation = animationsRef.current[trackIndex];
       if (animation) {
@@ -103,11 +120,18 @@ export const useLogosAnimation = () => {
 
   useEffect(() => {
     return () => {
+      // Clean up animations
       animationsRef.current.forEach(animation => {
         if (animation) {
           animation.kill();
         }
       });
+
+      // Clean up ScrollTrigger
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+      }
+
       animationsRef.current = [];
       trackRefs.current = [];
     };
@@ -119,7 +143,7 @@ export const useLogosAnimation = () => {
     initializeAllAnimations,
     pauseAnimations,
     resumeAnimations,
-    addHoverPause
+    addHoverPause,
   };
 };
 

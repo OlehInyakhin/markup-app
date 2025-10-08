@@ -1,7 +1,6 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-
 import { Hero } from '@/components/sections/Hero';
 import { Showreel } from '@/components/sections/Showreel';
 import { TextAndLogo } from '@/components/sections/TextAndLogo';
@@ -14,13 +13,14 @@ import { Ventures } from '@/components/sections/Ventures/Ventures';
 import { Follow } from '@/components/sections/Follow/Follow';
 import { CallToAction } from '@/components/sections/CallToAction';
 
-import { LiquidBackground, LiquidBackgroundPresets } from '@/components/common/LiquidBackground';
+import {
+  LiquidBackground,
+  LiquidBackgroundPresets,
+} from '@/components/common/LiquidBackground';
 import { Preloader } from '@/components/common/Preloader';
-import { useSmoothScrolling } from '@/hooks/useSmoothScrolling';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  useSmoothScrolling();
 
   const handlePreloaderComplete = () => {
     setIsLoading(false);
@@ -28,19 +28,16 @@ function App() {
 
   return (
     <div className="app">
-      {/* Preloader */}
       {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
-      
-      {/* Main App Content */}
+
       {!isLoading && (
         <>
-          {/* Liquid background animation */}
-          <LiquidBackground 
+          <LiquidBackground
             {...LiquidBackgroundPresets.purple}
             opacity={0.4}
             zIndex={-1}
           />
-          
+
           <Header />
           <main className="main-content">
             <Hero />

@@ -45,8 +45,6 @@
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .showreel__play-overlay {
     width: calc(var(--play-button-size) * 0.6);

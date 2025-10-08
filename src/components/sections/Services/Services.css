@@ -1,4 +1,3 @@
-/* Services Section */
 .services {
   overflow-x: hidden;
   padding: var(--space-5xl) 0 calc(var(--space-6xl) + var(--space-4xl));
@@ -13,7 +12,6 @@
   justify-content: space-between;
 }
 
-/* Video Section */
 .services__video-container {
   flex: 1;
   min-width: 600px;
@@ -46,7 +44,6 @@
   opacity: 0;
 }
 
-/* Services List */
 .services__list {
   flex: 1;
   display: flex;
@@ -56,7 +53,6 @@
   min-width: 500px;
 }
 
-/* Service Item */
 .services__item {
   position: relative;
   width: 100%;
@@ -75,7 +71,6 @@
   padding-bottom: 13px;
 }
 
-/* Service Title */
 .services__item-title {
   font-family: var(--font-family-leon, 'Leon', sans-serif);
   font-size: var(--font-size-h3);
@@ -84,7 +79,7 @@
   letter-spacing: -0.56px;
   text-transform: uppercase;
   margin: 0;
-  color: var(--color-grey-middle, #6B6C6D);
+  color: var(--color-grey-middle, #6b6c6d);
   transition: color 0.3s ease;
 }
 
@@ -93,7 +88,6 @@
   color: var(--color-grey-dark, #363738);
 }
 
-/* Arrow Icon */
 .services__arrow-container {
   width: 0;
   height: 80px;
@@ -115,12 +109,11 @@
   position: absolute;
   right: 0;
 
-  [dir="rtl"] & {
+  [dir='rtl'] & {
     transform: rotate(270deg);
   }
 }
 
-/* Show arrow on hover or with active modifier */
 .services__item:hover .services__arrow-container {
   width: 80px;
 }
@@ -135,7 +128,6 @@
   opacity: 1;
 }
 
-/* Service Line */
 .services__line {
   position: absolute;
   bottom: 0;
@@ -146,28 +138,28 @@
   opacity: 0.3;
 }
 
-/* Responsive Design */
 @media (max-width: 1279px) {
   .services {
-    padding: calc(var(--space-4xl) - var(--space-md)) 0 calc(var(--space-6xl) + var(--space-lg));
+    padding: calc(var(--space-4xl) - var(--space-md)) 0
+      calc(var(--space-6xl) + var(--space-lg));
   }
-  
+
   .services__video-container {
     min-width: auto;
     width: 100%;
     max-width: 600px;
   }
-  
+
   .services__list {
     min-width: auto;
     width: 100%;
     max-width: none;
   }
-  
+
   .services__item-content {
     width: 100%;
   }
-  
+
   .services__item {
     height: 92px;
     padding: 0;
@@ -191,7 +183,7 @@
   .services__item--active .services__arrow-container {
     width: 50px;
   }
-  
+
   .services__arrow {
     width: 50px;
     height: 45px;
@@ -218,7 +210,7 @@
     min-height: 90px;
     margin-top: -8px;
 
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       left: 0;
       right: unset;
     }
@@ -231,6 +223,7 @@
 
 @media (max-width: 639px) {
   .services {
-    padding: calc(var(--space-xl) - var(--space-sm)) 0 calc(var(--space-4xl) - var(--space-md));
+    padding: calc(var(--space-xl) - var(--space-sm)) 0
+      calc(var(--space-4xl) - var(--space-md));
   }
 }

@@ -1,4 +1,3 @@
-// Brand logo imports
 import brandLogo01 from '@/assets/images/logos/brands/brand-logo-01.svg';
 import brandLogo02 from '@/assets/images/logos/brands/brand-logo-02.svg';
 import brandLogo03 from '@/assets/images/logos/brands/brand-logo-03.png';
@@ -60,7 +59,7 @@ export const firstRowLogos = [
   { name: 'Brand 17', src: brandLogo17, alt: 'Brand Logo 17' },
   { name: 'Brand 18', src: brandLogo18, alt: 'Brand Logo 18' },
   { name: 'Brand 19', src: brandLogo19, alt: 'Brand Logo 19' },
-  { name: 'Brand 20', src: brandLogo20, alt: 'Brand Logo 20' }
+  { name: 'Brand 20', src: brandLogo20, alt: 'Brand Logo 20' },
 ];
 
 // Second row logos configuration
@@ -83,5 +82,5 @@ export const secondRowLogos = [
   { name: 'Brand 36', src: brandLogo36, alt: 'Brand Logo 36' },
   { name: 'Brand 37', src: brandLogo37, alt: 'Brand Logo 37' },
   { name: 'Brand 38', src: brandLogo38, alt: 'Brand Logo 38' },
-  { name: 'Brand 39', src: brandLogo39, alt: 'Brand Logo 39' }
+  { name: 'Brand 39', src: brandLogo39, alt: 'Brand Logo 39' },
 ];

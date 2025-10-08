@@ -52,7 +52,6 @@
   object-fit: contain;
 }
 
-/* Responsive design */
 @media (max-width: 1023px) {
   .text-and-logo__container {
     flex-flow: column nowrap;
@@ -71,12 +70,12 @@
     font-size: var(--font-size-h5);
     line-height: var(--line-height-h5);
   }
-  
+
   .text-and-logo__description {
     font-size: var(--font-size-p6);
     line-height: var(--line-height-p6);
   }
-  
+
   .text-and-logo__logo-container {
     width: calc(var(--logo-size) * 0.8);
     height: calc(var(--logo-size) * 0.8);

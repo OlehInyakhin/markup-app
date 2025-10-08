@@ -1,14 +1,10 @@
-/* Liquid Background Component Styles */
-
 .liquid-background {
-  /* Ensure smooth rendering */
   will-change: transform;
   backface-visibility: hidden;
   transform: translateZ(0);
   direction: ltr;
 }
 
-/* Base styles for liquid blobs */
 .liquid-background .liquid-blob {
   will-change: transform;
   backface-visibility: hidden;
@@ -16,22 +12,18 @@
   transition: opacity 0.3s ease;
 }
 
-/* Responsive adjustments */
 @media (max-width: 767px) {
   .liquid-background .liquid-blob {
-    /* Reduce blur on mobile for better performance */
     filter: blur(30px) !important;
   }
 }
 
 @media (max-width: 639px) {
   .liquid-background .liquid-blob {
-    /* Further reduce blur on small screens */
     filter: blur(60px) !important;
   }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .liquid-background .liquid-blob {
     animation-duration: 60s !important;
@@ -39,23 +31,17 @@
   }
 }
 
-/* High contrast mode adjustments */
 @media (prefers-contrast: high) {
   .liquid-background {
     opacity: 0.3 !important;
   }
 }
 
-/* Performance optimizations */
 .liquid-background {
-  /* Use GPU acceleration */
   transform: translate3d(0, 0, 0);
-  
-  /* Optimize for animations */
   contain: layout style paint;
 }
 
-/* Utility classes for different positioning */
 .liquid-background--absolute {
   position: absolute !important;
 }
@@ -68,7 +54,6 @@
   position: fixed !important;
 }
 
-/* Utility classes for different z-index levels */
 .liquid-background--behind {
   z-index: -10 !important;
 }

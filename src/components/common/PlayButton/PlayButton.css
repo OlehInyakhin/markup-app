@@ -26,7 +26,6 @@
   outline-offset: var(--space-xs);
 }
 
-/* Size variants */
 .play-button--small {
   width: calc(var(--space-2xl) + var(--space-sm));
   height: calc(var(--space-2xl) + var(--space-sm));
@@ -52,7 +51,6 @@
   transform: scale(1.1);
 }
 
-/* Responsive adjustments */
 @media (max-width: 1023px) {
   .play-button--medium {
     width: calc(var(--space-2xl) + var(--space-sm));
@@ -60,13 +58,12 @@
   }
 }
 
-/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .play-button,
   .play-button__icon {
     transition: none;
   }
-  
+
   .play-button:hover {
     transform: none;
   }

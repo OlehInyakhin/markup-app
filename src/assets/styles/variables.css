@@ -1,186 +1,159 @@
-/* CSS Variables */
-
 :root {
-  /* Colors - Figma Design System */
-  --color-primary: #181B1C; /* Grey Darkest */
-  --color-secondary: #EDEFF0; /* Almost White */
-  --color-accent: #0064FF; /* blue */
-  --color-accent-hover: #0857FF; /* Hybrid/H_Blue */
+  --color-primary: #181b1c; /* Grey Darkest */
+  --color-secondary: #edeff0; /* Almost White */
+  --color-accent: #0064ff; /* blue */
+  --color-accent-hover: #0857ff; /* Hybrid/H_Blue */
   --color-white: #ffffff; /* White */
-  
-  /* Figma Color Palette */
-  --grey-darkest: #181B1C;
+
+  --grey-darkest: #181b1c;
   --grey-dark: #363738;
   --grey-dark-minus: #545656; /* Hybrid/Grey Dark Minus */
   --grey-middle: #808283;
-  --grey-lighter: #D4D8DA;
-  --almost-white: #EDEFF0;
-  --gray-dark: #2B2D2C;
-  --gray-middle: #D5D8DA;
-  --gray-darkest: #181B1C;
-  
-  /* Highlight Colors */
-  --h-yellow: #FFEE00;
-  --h-red: #FF4944;
-  --h-green: #23DB6E;
-  --h-blue: #0857FF;
-  --blue: #0064FF;
-  
-  /* Key Colors */
-  --key-color-dark: #1E3E20;
-  
-  /* Border Colors */
+  --grey-lighter: #d4d8da;
+  --almost-white: #edeff0;
+  --gray-dark: #2b2d2c;
+  --gray-middle: #d5d8da;
+  --gray-darkest: #181b1c;
+
+  --h-yellow: #ffee00;
+  --h-red: #ff4944;
+  --h-green: #23db6e;
+  --h-blue: #0857ff;
+  --blue: #0064ff;
+
+  --key-color-dark: #1e3e20;
+
   --border-brand: #131313;
-  
-  /* Background Colors */
-  --bg-primary: #181B1C; /* Grey Darkest */
+
+  --bg-primary: #181b1c; /* Grey Darkest */
   --bg-secondary: #363738; /* Grey Dark */
-  --bg-tertiary: #2B2D2C; /* gray/dark */
-  --bg-surface: #EDEFF0; /* Almost White */
+  --bg-tertiary: #2b2d2c; /* gray/dark */
+  --bg-surface: #edeff0; /* Almost White */
   --bg-overlay: rgba(24, 27, 28, 0.8);
-  
-  /* Text Colors */
-  --text-primary: #181B1C; /* Grey Darkest */
+
+  --text-primary: #181b1c; /* Grey Darkest */
   --text-secondary: #363738; /* Grey Dark */
   --text-tertiary: #808283; /* Grey Middle */
-  --text-muted: #D4D8DA; /* Grey Lighter */
-  --text-inverse: #EDEFF0; /* Almost White */
-  
-  /* Border Colors */
-  --border-color: #131313; /* Colors/Border/Border-Brand */
-  --border-light: #D4D8DA; /* Grey Lighter */
+  --text-muted: #d4d8da; /* Grey Lighter */
+  --text-inverse: #edeff0; /* Almost White */
+
+  --border-color: #131313;
+  --border-light: #d4d8da; /* Grey Lighter */
   --border-dark: #363738; /* Grey Dark */
-  
-  /* Button Colors */
+
   --btn-primary-bg: #ffffff;
   --btn-primary-text: #000000;
   --btn-primary-hover: #f0f0f0;
-  
+
   --btn-secondary-bg: transparent;
   --btn-secondary-text: #ffffff;
   --btn-secondary-border: #ffffff;
   --btn-secondary-hover: #ffffff;
   --btn-secondary-hover-text: #000000;
-  
-  /* Status Colors */
+
   --color-success: #28a745;
   --color-warning: #ffc107;
   --color-error: #dc3545;
   --color-info: #17a2b8;
-  
-  /* Typography - Figma Design System */
-  --font-family-primary: 'Leon', 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-family-primary:
+    'Leon', 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
   --font-family-secondary: 'FFF Acid Grotesk', 'Inter', sans-serif;
   --font-family-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
-  
-  /* Figma Typography Scale */
-  /* Desktop Headings */
-  --font-size-h1: 6.875rem;     /* 110px - Desktop/H1 */
-  --font-size-h2: 4.6875rem;    /* 75px - Desktop/H2 */
-  --font-size-h3: 3.5rem;       /* 56px - Desktop/H3 */
-  --font-size-h5: 1.5rem;       /* 24px - Desktop/H5 */
-  --font-size-h6: 1.125rem;     /* 18px - Desktop/H6 */
-  
-  /* Desktop Paragraphs */
-  --font-size-p2: 2.5rem;       /* 40px - Desktop/P2 */
-  --font-size-p3: 2.125rem;     /* 34px - Desktop/P3 */
-  --font-size-p4: 1.625rem;     /* 26px - Desktop/P4 */
-  --font-size-p6: 1.125rem;     /* 18px - Desktop/P6 */
-  
-  /* English Typography */
+
+  --font-size-h1: 6.875rem; /* 110px - Desktop/H1 */
+  --font-size-h2: 4.6875rem; /* 75px - Desktop/H2 */
+  --font-size-h3: 3.5rem; /* 56px - Desktop/H3 */
+  --font-size-h5: 1.5rem; /* 24px - Desktop/H5 */
+  --font-size-h6: 1.125rem; /* 18px - Desktop/H6 */
+
+  --font-size-p2: 2.5rem; /* 40px - Desktop/P2 */
+  --font-size-p3: 2.125rem; /* 34px - Desktop/P3 */
+  --font-size-p4: 1.625rem; /* 26px - Desktop/P4 */
+  --font-size-p6: 1.125rem; /* 18px - Desktop/P6 */
+
   --font-size-en-h2: 4.0625rem; /* 65px - En Desktop/H2 En Desktop */
   --font-size-en-p4: 1.0625rem; /* 17px - Desktop/En P4 */
-  
-  /* Standard sizes for compatibility */
-  --font-size-xs: 0.75rem;      /* 12px */
-  --font-size-sm: 0.875rem;     /* 14px */
-  --font-size-base: 1rem;       /* 16px */
-  --font-size-lg: 1.125rem;     /* 18px */
-  --font-size-xl: 1.25rem;      /* 20px */
-  --font-size-2xl: 1.5rem;      /* 24px */
-  --font-size-3xl: 1.875rem;    /* 30px */
-  --font-size-4xl: 2.25rem;     /* 36px */
-  --font-size-5xl: 3rem;        /* 48px */
-  --font-size-6xl: 4rem;        /* 64px */
-  
-  /* Font Weights */
+
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 4rem; /* 64px */
+
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-  
-  /* Line Heights - Figma Design System */
-  --line-height-h1: 6.875rem;    /* 110px - Desktop/H1 line-height */
-  --line-height-h2: 4.21875rem;  /* 67.5px - Desktop/H2 (75px * 0.9) */
-  --line-height-h3: 4.025rem;    /* 64.4px - Desktop/H3 (56px * 1.15) */
-  --line-height-h5: 1.89rem;     /* 30.24px - Desktop/H5 (24px * 1.26) */
-  --line-height-h6: 1.4625rem;   /* 23.4px - Desktop/H6 (18px * 1.3) */
-  --line-height-p2: 2.875rem;    /* 46px - Desktop/P2 (40px * 1.15) */
-  --line-height-p3: 2.55rem;     /* 40.8px - Desktop/P3 (34px * 1.2) */
-  --line-height-p4: 2.1938rem;   /* 35.1px - Desktop/P4 (26px * 1.35) */
-  --line-height-p4-he: 1.95rem;  /* 31.2px - He Desktop/PH4 He (26px * 1.2) */
-  --line-height-p6: 1.575rem;    /* 25.2px - Desktop/P6 (18px * 1.4) */
+
+  --line-height-h1: 6.875rem; /* 110px - Desktop/H1 line-height */
+  --line-height-h2: 4.21875rem; /* 67.5px - Desktop/H2 (75px * 0.9) */
+  --line-height-h3: 4.025rem; /* 64.4px - Desktop/H3 (56px * 1.15) */
+  --line-height-h5: 1.89rem; /* 30.24px - Desktop/H5 (24px * 1.26) */
+  --line-height-h6: 1.4625rem; /* 23.4px - Desktop/H6 (18px * 1.3) */
+  --line-height-p2: 2.875rem; /* 46px - Desktop/P2 (40px * 1.15) */
+  --line-height-p3: 2.55rem; /* 40.8px - Desktop/P3 (34px * 1.2) */
+  --line-height-p4: 2.1938rem; /* 35.1px - Desktop/P4 (26px * 1.35) */
+  --line-height-p4-he: 1.95rem; /* 31.2px - He Desktop/PH4 He (26px * 1.2) */
+  --line-height-p6: 1.575rem; /* 25.2px - Desktop/P6 (18px * 1.4) */
   --line-height-en-h2: 4.875rem; /* 78px - En Desktop/H2 (65px * 1.2) */
-  --line-height-en-p4: 1.4875rem;/* 23.8px - Desktop/En P4 (17px * 1.4) */
-  
-  /* Standard line heights for compatibility */
+  --line-height-en-p4: 1.4875rem; /* 23.8px - Desktop/En P4 (17px * 1.4) */
+
   --line-height-tight: 1.1;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.6;
   --line-height-loose: 2;
-  
-  /* Letter Spacing */
+
   --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.02em;
-  
-  /* Spacing Scale */
-  --space-xs: 0.25rem;   /* 4px */
-  --space-sm: 0.5rem;    /* 8px */
-  --space-md: 1rem;      /* 16px */
-  --space-lg: 1.5rem;    /* 24px */
-  --space-xl: 2rem;      /* 32px */
-  --space-2xl: 2.5rem;   /* 40px */
-  --space-3xl: 3rem;     /* 48px */
-  --space-4xl: 4rem;     /* 64px */
-  --space-5xl: 5rem;     /* 80px */
-  --space-6xl: 6rem;     /* 96px */
-  
-  /* Container Sizes - Figma Design System */
-  --container-max-width: 1920px;     /* Full design width */
+
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 2.5rem; /* 40px */
+  --space-3xl: 3rem; /* 48px */
+  --space-4xl: 4rem; /* 64px */
+  --space-5xl: 5rem; /* 80px */
+  --space-6xl: 6rem; /* 96px */
+
+  --container-max-width: 1920px; /* Full design width */
   --container-content-width: 1760px; /* Content max-width */
-  --container-padding: 80px;         /* Desktop padding */
-  --container-padding-tablet: 40px;  /* Tablet padding */
-  --container-padding-mobile: 20px;  /* Mobile padding */
-  
-  /* Design System Dimensions */
-  --header-height: 103px;            /* Navigation menu height */
-  --hero-height: 702px;              /* Header section height */
-  --showreel-height: 1103px;         /* Showreel section height */
-  --logo-size: 169px;                /* Logo container size */
-  --play-button-size: 200px;         /* Play button size */
-  
-  /* Border Radius */
+  --container-padding: 80px; /* Desktop padding */
+  --container-padding-tablet: 40px; /* Tablet padding */
+  --container-padding-mobile: 20px; /* Mobile padding */
+
+  --header-height: 103px; /* Navigation menu height */
+  --hero-height: 702px; /* Header section height */
+  --showreel-height: 1103px; /* Showreel section height */
+  --logo-size: 169px; /* Logo container size */
+  --play-button-size: 200px; /* Play button size */
+
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-full: 9999px;
-  
-  /* Shadows */
+
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-  
-  /* Transitions */
+
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
-  /* Z-Index Scale */
+
   --z-dropdown: 1000;
   --z-sticky: 1020;
   --z-fixed: 1030;
@@ -189,21 +162,18 @@
   --z-popover: 1060;
   --z-tooltip: 1070;
   --z-toast: 1080;
-  
-  /* Breakpoints (for reference in media queries) */
+
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
-  
-  /* Animation Durations */
+
   --duration-fast: 0.15s;
   --duration-normal: 0.3s;
   --duration-slow: 0.5s;
   --duration-slower: 0.75s;
-  
-  /* Animation Easings */
+
   --ease-linear: linear;
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -211,27 +181,25 @@
   --ease-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Light theme variables (if needed) */
-[data-theme="light"] {
+[data-theme='light'] {
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --bg-tertiary: #e9ecef;
   --bg-surface: #ffffff;
   --bg-overlay: rgba(255, 255, 255, 0.9);
-  
+
   --text-primary: #000000;
   --text-secondary: #6c757d;
   --text-tertiary: #adb5bd;
   --text-muted: #dee2e6;
   --text-inverse: #ffffff;
-  
+
   --border-color: #dee2e6;
   --border-light: #e9ecef;
   --border-dark: #adb5bd;
 }
 
-/* High contrast theme */
-[data-theme="high-contrast"] {
+[data-theme='high-contrast'] {
   --bg-primary: #000000;
   --bg-secondary: #000000;
   --text-primary: #ffffff;
@@ -239,7 +207,6 @@
   --border-color: #ffffff;
 }
 
-/* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --transition-fast: 0s;

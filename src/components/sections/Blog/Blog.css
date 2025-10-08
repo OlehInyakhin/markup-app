@@ -1,5 +1,5 @@
 .blog {
-  padding: var(--container-padding) 0;
+  padding: 200px 0 var(--space-4xl);
   background-color: var(--color-background);
   overflow-x: hidden;
 }
@@ -79,27 +79,25 @@
   }
 }
 
-/* Swiper Scrollbar Customization */
 .blog__swiper .swiper-scrollbar {
-  position: relative !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 1px !important;
-  background: rgba(0, 0, 0, 0.1) !important;
-  border-radius: 2px !important;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
   margin-top: var(--space-lg);
 }
 
 .blog__swiper .swiper-scrollbar-drag {
-  background: var(--color-primary, #007bff) !important;
-  border-radius: 2px !important;
-  height: 2px !important;
-  top: -50% !important;
+  background: var(--color-primary);
+  border-radius: 2px;
+  height: 2px;
+  top: -50%;
   cursor: pointer;
 }
 
-/* Responsive Design */
 @media (max-width: 1279px) {
   .blog {
     padding: calc(var(--space-xl) + var(--space-sm)) 0 0;
@@ -117,16 +115,16 @@
   .blog__title {
     font-size: var(--font-size-h4);
   }
-  
+
   .blog__gallery {
     gap: var(--space-xl);
     padding: var(--space-sm) 0;
   }
-  
+
   .blog__card {
     width: 285px;
   }
-  
+
   .blog__card-content {
     padding: var(--space-md) 0;
   }

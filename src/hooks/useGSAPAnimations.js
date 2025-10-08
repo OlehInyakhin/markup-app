@@ -2,148 +2,272 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * Custom hook for GSAP scroll animations
- * Provides reusable animation functions for different components
- */
 export const useGSAPAnimations = () => {
   const elementsRef = useRef([]);
 
-  // Add element to animation queue
-  const addToRefs = (el) => {
+  const prefersReducedMotion = () => {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  };
+
+  const getAnimationConfig = config => {
+    if (prefersReducedMotion()) {
+      return {
+        ...config,
+        duration: 0.1,
+        ease: 'none',
+      };
+    }
+    return config;
+  };
+
+  const addToRefs = el => {
     if (el && !elementsRef.current.includes(el)) {
       elementsRef.current.push(el);
     }
   };
 
-  // Fade in animation from bottom
   const fadeInUp = (element, delay = 0, duration = 1) => {
-    gsap.fromTo(element, 
-      {
-        opacity: 0,
-        y: 50,
-        scale: 0.95
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: duration,
-        delay: delay,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  };
-
-  // Slide in from left
-  const slideInLeft = (element, delay = 0, duration = 1) => {
-    gsap.fromTo(element,
-      {
-        opacity: 0,
-        x: -100
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: duration,
-        delay: delay,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  };
-
-  // Slide in from right
-  const slideInRight = (element, delay = 0, duration = 1) => {
-    gsap.fromTo(element,
-      {
-        opacity: 0,
-        x: 100
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: duration,
-        delay: delay,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  };
-
-  // Stagger animation for multiple elements
-  const staggerAnimation = (elements, delay = 0.2) => {
-    gsap.fromTo(elements,
-      {
-        opacity: 0,
-        y: 30
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        stagger: delay,
-        scrollTrigger: {
-          trigger: elements[0],
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  };
-
-  // Parallax effect
-  const parallaxEffect = (element, speed = 0.5) => {
-    gsap.to(element, {
-      yPercent: -50 * speed,
-      ease: "none",
+    const config = getAnimationConfig({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: duration,
+      delay: delay,
+      ease: 'power2.out',
       scrollTrigger: {
         trigger: element,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
-      }
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: prefersReducedMotion() ? 0 : 50,
+        scale: prefersReducedMotion() ? 1 : 0.95,
+      },
+      config
+    );
+  };
+
+  const slideInLeft = (element, delay = 0, duration = 1) => {
+    const config = getAnimationConfig({
+      opacity: 1,
+      x: 0,
+      duration: duration,
+      delay: delay,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        x: prefersReducedMotion() ? 0 : -100,
+      },
+      config
+    );
+  };
+
+  const slideInRight = (element, delay = 0, duration = 1) => {
+    const config = getAnimationConfig({
+      opacity: 1,
+      x: 0,
+      duration: duration,
+      delay: delay,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        x: prefersReducedMotion() ? 0 : 100,
+      },
+      config
+    );
+  };
+
+  const slideInDown = (element, delay = 0, duration = 1) => {
+    const config = getAnimationConfig({
+      opacity: 1,
+      y: 0,
+      duration: duration,
+      delay: delay,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: prefersReducedMotion() ? 0 : -100,
+      },
+      config
+    );
+  };
+
+  const staggerAnimation = (elements, delay = 0.2, startDelay = 0) => {
+    const config = getAnimationConfig({
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      stagger: prefersReducedMotion() ? 0 : delay,
+      delay: startDelay,
+      scrollTrigger: {
+        trigger: elements[0],
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    gsap.fromTo(
+      elements,
+      {
+        opacity: 0,
+        y: prefersReducedMotion() ? 0 : 30,
+      },
+      config
+    );
+  };
+
+  const parallaxEffect = (element, speed = 0.5) => {
+    // Skip parallax effect if user prefers reduced motion
+    if (prefersReducedMotion()) {
+      return;
+    }
+
+    gsap.to(element, {
+      yPercent: -50 * speed,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
     });
   };
 
-  // Scale on scroll
-  const scaleOnScroll = (element, fromScale = 0.8, toScale = 1) => {
-    gsap.fromTo(element,
-      {
-        scale: fromScale
+  const scaleOnScroll = (element, fromScale = 0.8, toScale = 1, delay = 0) => {
+    const config = getAnimationConfig({
+      scale: toScale,
+      duration: 1,
+      delay: delay,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
       },
+    });
+
+    gsap.fromTo(
+      element,
       {
-        scale: toScale,
-        duration: 1,
-        ease: "power2.out",
+        scale: prefersReducedMotion() ? toScale : fromScale,
+      },
+      config
+    );
+  };
+
+  // Fade in from top animation
+  const fadeInDown = (element, delay = 0, duration = 1) => {
+    const config = getAnimationConfig({
+      opacity: 1,
+      y: 0,
+      duration: duration,
+      delay: delay,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: prefersReducedMotion() ? 0 : -50,
+      },
+      config
+    );
+  };
+
+  // Typewriter effect for text elements
+  const typewriterEffect = (element, duration = 2, delay = 0) => {
+    if (!element || !element.textContent) return;
+
+    const text = element.textContent;
+    const chars = text.split('');
+    element.innerHTML = '';
+
+    // Check for reduced motion preference
+    if (prefersReducedMotion()) {
+      element.innerHTML = text;
+      return;
+    }
+
+    gsap.to(
+      {},
+      {
+        duration: duration,
+        delay: delay,
+        ease: 'none',
+        onUpdate: function () {
+          const progress = this.progress();
+          const currentIndex = Math.floor(progress * chars.length);
+          element.innerHTML =
+            chars.slice(0, currentIndex).join('') +
+            (progress < 1 ? '<span class="typewriter-cursor">|</span>' : '');
+        },
+        onComplete: function () {
+          element.innerHTML = text;
+        },
         scrollTrigger: {
           trigger: element,
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
       }
     );
   };
 
-  // Cleanup function
+  // Fade out animation
+  const fadeOut = (element, delay = 0, duration = 0.8) => {
+    const config = getAnimationConfig({
+      opacity: 0,
+      duration: duration,
+      delay: delay,
+      ease: 'power2.out',
+    });
+
+    gsap.to(element, config);
+  };
+
   useEffect(() => {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -153,11 +277,15 @@ export const useGSAPAnimations = () => {
   return {
     addToRefs,
     fadeInUp,
+    fadeInDown,
+    fadeOut,
     slideInLeft,
     slideInRight,
+    slideInDown,
     staggerAnimation,
     parallaxEffect,
-    scaleOnScroll
+    scaleOnScroll,
+    typewriterEffect,
   };
 };
 

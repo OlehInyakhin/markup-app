@@ -24,19 +24,19 @@ export const Showreel = () => {
   useEffect(() => {
     const video = document.querySelector('.showreel__video');
     const overlay = document.querySelector('.showreel__play-overlay');
-    
+
     if (video && overlay) {
       const handlePause = () => {
         overlay.style.display = 'block';
       };
-      
+
       const handleEnded = () => {
         overlay.style.display = 'block';
       };
-      
+
       video.addEventListener('pause', handlePause);
       video.addEventListener('ended', handleEnded);
-      
+
       return () => {
         video.removeEventListener('pause', handlePause);
         video.removeEventListener('ended', handleEnded);
@@ -47,8 +47,8 @@ export const Showreel = () => {
   return (
     <section className="showreel">
       <div className="showreel__video-container">
-        <video 
-          className="showreel__video" 
+        <video
+          className="showreel__video"
           poster={showreelBackground}
           controls={false}
         >
@@ -57,10 +57,7 @@ export const Showreel = () => {
         </video>
       </div>
       <div className="showreel__play-overlay" onClick={handlePlayClick}>
-        <PlayButton 
-          size="large"
-          className="showreel__play-button"
-        />
+        <PlayButton size="large" className="showreel__play-button" />
       </div>
     </section>
   );
