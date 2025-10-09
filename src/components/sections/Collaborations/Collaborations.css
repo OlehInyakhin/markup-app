@@ -34,7 +34,6 @@
 
 .collaborations__card {
   width: 350px;
-  background: var(--color-surface);
   overflow: hidden;
   cursor: pointer;
 }

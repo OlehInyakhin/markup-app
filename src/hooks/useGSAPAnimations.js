@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -127,7 +127,7 @@ export const useGSAPAnimations = () => {
     );
   };
 
-  const staggerAnimation = (elements, delay = 0.2, startDelay = 0) => {
+  const staggerAnimation = useCallback((elements, delay = 0.2, startDelay = 0) => {
     const config = getAnimationConfig({
       opacity: 1,
       y: 0,
@@ -150,7 +150,7 @@ export const useGSAPAnimations = () => {
       },
       config
     );
-  };
+  }, []);
 
   const parallaxEffect = (element, speed = 0.5) => {
     // Skip parallax effect if user prefers reduced motion
@@ -170,7 +170,7 @@ export const useGSAPAnimations = () => {
     });
   };
 
-  const scaleOnScroll = (element, fromScale = 0.8, toScale = 1, delay = 0) => {
+  const scaleOnScroll = useCallback((element, fromScale = 0.8, toScale = 1, delay = 0) => {
     const config = getAnimationConfig({
       scale: toScale,
       duration: 1,
@@ -190,7 +190,7 @@ export const useGSAPAnimations = () => {
       },
       config
     );
-  };
+  }, []);
 
   // Fade in from top animation
   const fadeInDown = (element, delay = 0, duration = 1) => {

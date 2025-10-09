@@ -62,7 +62,7 @@ export const Blog = () => {
               <SwiperSlide key={post.id} className="blog__slide">
                 <div className="blog__card">
                   <div className="blog__card-image">
-                    <img src={post.image} alt={post.title} loading="lazy" />
+                    <img src={post.image} alt={post.title} width={480} height={640} loading="lazy" />
                   </div>
                   <div className="blog__card-content">
                     <h3 className="blog__card-title">
