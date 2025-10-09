@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import './Showreel.css';
 import { PlayButton } from '@/components/common/PlayButton';
 
-import showreelBackground from '@/assets/images/showreel-background.png';
+import showreelBackground from '@/assets/images/showreel-background.webp';
 import showreelVideo from '@/assets/media/showreel.mp4';
 
 export const Showreel = () => {

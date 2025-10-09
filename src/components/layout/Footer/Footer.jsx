@@ -27,16 +27,11 @@ export const Footer = () => {
   useEffect(() => {
     if (footerRef.current) {
       const columns = footerRef.current.querySelectorAll('.footer__column');
-      staggerAnimation(columns, 0.2);
-
-      columns.forEach((column, columnIndex) => {
-        const links = column.querySelectorAll('.footer__link');
-        staggerAnimation(links, 0.1, columnIndex * 0.3);
-      });
+      staggerAnimation(columns, 0.3);
 
       const brandSection = footerRef.current.querySelector('.footer__brand');
       if (brandSection) {
-        fadeInUp(brandSection, 0, 0.8);
+        fadeInUp(brandSection, 0.3, 0.8);
       }
 
       const footerImage = footerRef.current.querySelector('.footer__image');

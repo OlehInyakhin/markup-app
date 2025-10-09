@@ -2,11 +2,11 @@ import { useEffect, useRef } from 'react';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
 import './Follow.css';
 
-import Image1 from '@/assets/images/follow/follow-image-01.jpg';
-import Image2 from '@/assets/images/follow/follow-image-02.jpg';
-import Image3 from '@/assets/images/follow/follow-image-03.jpg';
-import Image4 from '@/assets/images/follow/follow-image-04.jpg';
-import Image5 from '@/assets/images/follow/follow-image-05.jpg';
+import Image1 from '@/assets/images/follow/follow-image-01.webp';
+import Image2 from '@/assets/images/follow/follow-image-02.webp';
+import Image3 from '@/assets/images/follow/follow-image-03.webp';
+import Image4 from '@/assets/images/follow/follow-image-04.webp';
+import Image5 from '@/assets/images/follow/follow-image-05.webp';
 import Linkedin from '@/assets/images/icons/linkedin.svg?react';
 import Instagram from '@/assets/images/icons/instagram.svg?react';
 
