@@ -123,10 +123,6 @@
   transform-origin: bottom center;
 }
 
-.header__menu-btn:not(.header__menu-btn--open):hover span:nth-child(2) {
-  width: 20px;
-}
-
 .header__menu-btn--open span:nth-child(1) {
   transform: rotate(45deg) translateY(6px);
 }
