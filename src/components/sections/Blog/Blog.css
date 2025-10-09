@@ -27,6 +27,7 @@
 .blog__swiper {
   overflow: visible;
   padding-bottom: var(--space-2xl);
+  cursor: none;
 }
 
 .blog__slide {
@@ -52,6 +53,7 @@
 
 .blog__card-content {
   padding: var(--space-xl) 0;
+  cursor: initial;
 }
 
 .blog__card-date {
