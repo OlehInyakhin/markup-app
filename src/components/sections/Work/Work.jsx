@@ -113,7 +113,7 @@ export const Work = () => {
       // Add fade up animation to content
       const content = block.querySelector('.work__block-content');
       if (content) {
-        fadeInUpReverse(content, index * 0.1 + 0.3, 0.8);
+        fadeInUpReverse(content, 0.3, 0.3);
       }
     });
 

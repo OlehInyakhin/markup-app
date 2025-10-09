@@ -6,12 +6,14 @@ import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 import './Blog.css';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
+import { ArrowFollower } from '@/components/common/ArrowFollower/ArrowFollower.jsx';
 
 import { blogPosts } from './constants';
 
 export const Blog = () => {
   const titleRef = useRef(null);
   const sectionRef = useRef(null);
+  const galleryRef = useRef(null);
   const { fadeInUp, staggerAnimation } = useGSAPAnimations();
 
   useEffect(() => {
@@ -40,7 +42,11 @@ export const Blog = () => {
           </h1>
         </header>
 
-        <div className="blog__gallery-container">
+        <div className="blog__gallery-container" ref={galleryRef}>
+          <ArrowFollower
+            containerRef={galleryRef}
+            hideOnHoverSelectors={[ '.blog__card-content' ]}
+          />
           <Swiper
             modules={[FreeMode, Scrollbar]}
             spaceBetween={25}

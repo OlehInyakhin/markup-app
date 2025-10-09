@@ -6,12 +6,14 @@ import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 import './Collaborations.css';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
+import { ArrowFollower } from '@/components/common/ArrowFollower/ArrowFollower.jsx';
 
 import { collaborations } from './constants';
 
 export const Collaborations = () => {
   const titleRef = useRef(null);
   const sectionRef = useRef(null);
+  const galleryRef = useRef(null);
   const { fadeInUp, staggerAnimation } = useGSAPAnimations();
 
   useEffect(() => {
@@ -42,7 +44,11 @@ export const Collaborations = () => {
           </h1>
         </header>
 
-        <div className="collaborations__gallery-container">
+        <div className="collaborations__gallery-container" ref={galleryRef}>
+          <ArrowFollower
+            containerRef={galleryRef}
+            hideOnHoverSelectors={[ '.collaborations__card-content' ]}
+          />
           <Swiper
             className="collaborations__swiper"
             modules={[FreeMode, Scrollbar]}
