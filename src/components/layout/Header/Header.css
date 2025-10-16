@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 99;
   transition:
-    transform var(--transition-normal) var(--ease-in-out),
+    transform var(--transition-normal),
     opacity var(--transition-normal),
     backdrop-filter var(--transition-normal);
   padding: var(--container-padding-tablet) 0;
