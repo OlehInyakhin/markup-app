@@ -54,7 +54,7 @@
 
 .call-to-action__text {
   font-weight: 700;
-  font-size: clamp(28px, 5vw, 110px);
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-h1));
   line-height: 1;
   letter-spacing: -0.03em;
   text-transform: uppercase;

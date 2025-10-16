@@ -1,7 +1,7 @@
 .follow {
   width: 100%;
   min-height: 100vh;
-  padding: 80px 0;
+  padding: var(--space-5xl) 0;
   overflow: hidden;
 }
 
@@ -25,7 +25,7 @@
 
 .follow__title {
   font-weight: var(--font-weight-bold);
-  font-size: clamp(28px, 5vw, 56px);
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-h3));
   line-height: 1.2;
   letter-spacing: -0.56px;
   margin: 0;
@@ -101,8 +101,8 @@
 }
 
 .follow__link {
-  width: clamp(28px, 5vw, 48px);
-  height: clamp(28px, 5vw, 48px);
+  width: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+  height: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
   transition:
     transform 0.3s ease,
     color 0.3s ease;

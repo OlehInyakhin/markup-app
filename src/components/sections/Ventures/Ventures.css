@@ -61,7 +61,7 @@
 }
 
 .ventures__title {
-  font-size: clamp(30px, 5vw, 75px);
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-h2));
   text-transform: uppercase;
   font-weight: var(--font-weight-bold);
   line-height: 0.9;
@@ -83,13 +83,13 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: gap 0.3s ease;
+  transition: gap var(--transition-normal);
 }
 
 .ventures__cta-icon {
   width: 28px;
   max-height: 28px;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
 
   [dir='ltr'] & {
     transform: scaleX(-1);

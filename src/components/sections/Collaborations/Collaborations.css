@@ -12,7 +12,7 @@
 }
 
 .collaborations__title {
-  font-size: var(--font-size-h3);
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-h3));
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   line-height: 1.2;
@@ -61,7 +61,8 @@
 }
 
 .collaborations__card-content {
-  padding: 24px 0;
+  font-size: var(--font-size-p6);
+  padding: var(--space-lg) 0;
   cursor: initial;
 }
 
@@ -75,7 +76,7 @@
 }
 
 .collaborations__card-title {
-  font-size: var(--font-size-h5);
+  font-size: var(--font-size-p4);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin-bottom: 12px;
@@ -97,13 +98,13 @@
   width: 100%;
   height: 1px;
   background: rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
   margin-top: 20px;
 }
 
 .collaborations__swiper .swiper-scrollbar-drag {
   background: var(--color-primary, #007bff);
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
   height: 2px;
   top: -50%;
   cursor: pointer;
@@ -113,17 +114,9 @@
   .collaborations__header {
     margin-bottom: 80px;
   }
-
-  .collaborations__title {
-    font-size: var(--font-size-h3);
-  }
 }
 
 @media (max-width: 768px) {
-  .collaborations__title {
-    font-size: 28px;
-  }
-
   .collaborations__gallery {
     gap: 30px;
     padding: 0;
@@ -137,9 +130,5 @@
 @media (max-width: 480px) {
   .collaborations {
     padding-bottom: 0;
-  }
-
-  .collaborations__card-title {
-    font-size: var(--font-size-h5);
   }
 }

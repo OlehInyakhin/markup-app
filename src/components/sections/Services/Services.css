@@ -36,7 +36,7 @@
   height: 139.52%;
   max-width: none;
   object-fit: cover;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity var(--transition-normal);
   opacity: 1;
 }
 
@@ -72,14 +72,13 @@
 }
 
 .services__item-title {
-  font-family: var(--font-family-leon, 'Leon', sans-serif);
-  font-size: var(--font-size-h3);
+  font-size: clamp(var(--font-size-3xl), 3vw, var(--font-size-h3));
   font-weight: 400;
   line-height: 1.15;
-  letter-spacing: -0.56px;
+  letter-spacing: -0.01em;
   margin: 0;
   color: var(--color-grey-middle, #6b6c6d);
-  transition: color 0.3s ease;
+  transition: color var(--transition-normal);
 }
 
 .services__item:hover .services__item-title,
@@ -95,7 +94,7 @@
   justify-content: center;
   position: relative;
   overflow: visible;
-  transition: width 0.3s ease;
+  transition: width var(--transition-normal);
 }
 
 .services__arrow {
@@ -104,7 +103,7 @@
   transform: rotate(90deg);
   object-fit: contain;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-normal);
   position: absolute;
   right: 0;
 
@@ -164,14 +163,9 @@
     padding: 0;
   }
 
-  .services__item-title {
-    font-size: 28px;
-    letter-spacing: -0.28px;
-  }
-
   .services__item-content {
     gap: var(--space-lg);
-    padding: 8px 0;
+    padding: var(--space-xs) 0;
   }
 
   .services__item:hover .services__arrow-container {

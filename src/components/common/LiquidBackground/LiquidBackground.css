@@ -9,16 +9,16 @@
   will-change: transform;
   backface-visibility: hidden;
   transform: translateZ(0);
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-normal);
 }
 
-@media (max-width: 767px) {
+@media (max-width: var(--breakpoint-md)) {
   .liquid-background .liquid-blob {
     filter: blur(30px) !important;
   }
 }
 
-@media (max-width: 639px) {
+@media (max-width: var(--breakpoint-sm)) {
   .liquid-background .liquid-blob {
     filter: blur(60px) !important;
   }

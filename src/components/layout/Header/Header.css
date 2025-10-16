@@ -5,9 +5,9 @@
   width: 100%;
   z-index: 99;
   transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.3s ease,
-    backdrop-filter 0.3s ease;
+    transform var(--transition-normal) var(--ease-in-out),
+    opacity var(--transition-normal),
+    backdrop-filter var(--transition-normal);
   padding: var(--container-padding-tablet) 0;
   transform: translateY(0);
 }
@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  transition: backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: backdrop-filter 0.4s var(--ease-in-out);
   backdrop-filter: blur(10px);
   background: var(--bg-header);
 
@@ -218,7 +218,7 @@
   }
 
   .nav-link {
-    font-size: clamp(24px, 3vw, 34px);
+    font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-p3));
     font-weight: var(--font-weight-medium);
     color: var(--grey-darkest);
     padding: var(--space-md);

@@ -35,7 +35,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  gap: 2rem;
+  gap: var(--space-xl);
 }
 
 .footer__column {
@@ -63,8 +63,8 @@
   color: var(--almost-white);
   opacity: 0.4;
   text-decoration: none;
-  transition: opacity 0.3s ease;
-  font-size: clamp(18px, 3vw, 1.65rem);
+  transition: opacity var(--transition-normal);
+  font-size: clamp(var(--font-size-lg), 3vw, 1.65rem);
 
   &:hover {
     opacity: 1;
@@ -81,7 +81,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: var(--space-xl);
   flex-wrap: wrap;
   gap: var(--space-md);
   color: var(--almost-white);
@@ -105,7 +105,7 @@
 
 .footer__legal {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-lg);
 }
 
 .footer__legal .footer__link {
@@ -119,11 +119,11 @@
 }
 
 .footer__subscription-form {
-  margin-top: 2rem;
+  margin-top: var(--space-xl);
 }
 
 .footer__form-title {
-  font-size: clamp(24px, 3vw, 40px);
+  font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-p2));
 }
 
 .footer__input-group {
@@ -140,11 +140,11 @@
   border-bottom: 1px solid var(--grey-dark-minus);
   padding: 0.75rem 0 2rem;
   padding-inline-end: 60px;
-  font-size: clamp(22px, 3vw, 34px);
+  font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-p3));
   color: var(--text-muted);
   outline: none;
   border-radius: 0;
-  transition: border-color 0.3s ease;
+  transition: border-color var(--transition-normal);
 }
 
 .footer__email-input::placeholder {
