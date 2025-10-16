@@ -30,6 +30,7 @@
   --bg-tertiary: #2b2d2c; /* gray/dark */
   --bg-surface: #edeff0; /* Almost White */
   --bg-overlay: rgba(24, 27, 28, 0.8);
+  --bg-header: rgba(212, 216, 218, 0.2);
 
   --text-primary: #181b1c; /* Grey Darkest */
   --text-secondary: #363738; /* Grey Dark */

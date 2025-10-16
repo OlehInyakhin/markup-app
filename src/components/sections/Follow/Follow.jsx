@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
 import './Follow.css';
 
@@ -11,10 +12,15 @@ import Linkedin from '@/assets/images/icons/linkedin.svg?react';
 import Instagram from '@/assets/images/icons/instagram.svg?react';
 
 export const Follow = () => {
+  const {
+    t,
+    i18n: { dir },
+  } = useTranslation('follow');
   const titleRef = useRef(null);
   const linksRef = useRef([]);
   const imagesRef = useRef([]);
   const { fadeInUp, staggerAnimation } = useGSAPAnimations();
+  const direction = dir() ?? 'rtl';
 
   useEffect(() => {
     if (titleRef.current) {
@@ -22,11 +28,11 @@ export const Follow = () => {
     }
 
     if (linksRef.current.length > 0) {
-      staggerAnimation(linksRef.current, 0.2, 0.3);
+      staggerAnimation(linksRef.current, 0.2, 0.2);
     }
 
     if (imagesRef.current.length > 0) {
-      staggerAnimation(imagesRef.current, 0.3, 0.3);
+      staggerAnimation(imagesRef.current, 0.2, 0.2);
     }
   }, [fadeInUp, staggerAnimation]);
 
@@ -43,12 +49,12 @@ export const Follow = () => {
   };
 
   return (
-    <section className="follow">
+    <section className="follow" id="follow">
       <div className="container follow__container">
         <header className="follow__header">
           <div className="follow__title-wrapper">
             <h2 ref={titleRef} className="follow__title">
-              תהיו חברים
+              {t('title')}
             </h2>
           </div>
           <div className="follow__actions">
@@ -73,7 +79,7 @@ export const Follow = () => {
           </div>
         </header>
 
-        <div className="follow__gallery">
+        <div className="follow__gallery" key={`follow-gallery-${direction}`}>
           <div ref={addToImagesRef} className="follow__image follow__image--1">
             <img src={Image1} alt="Gallery image 1" />
           </div>

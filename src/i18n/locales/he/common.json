@@ -1,0 +1,72 @@
+{
+  "navigation": {
+    "services": "שירותים",
+    "about": "עלינו",
+    "work": "עבודות",
+    "blog": "בלוג",
+    "career": "קריירה",
+    "contact": "צור קשר"
+  },
+  "language": "English",
+  "buttons": {
+    "readMore": "קרא עוד",
+    "viewProject": "צפה בפרויקט",
+    "contact": "צור קשר",
+    "submit": "שלח",
+    "letsTalk": "בואו נדבר",
+    "allProjects": "לכל הפרויקטים"
+  },
+  "hero": {
+    "title": "לא משנה איך יראה העתיד, נדאג שתהיו חלק ממנו",
+    "subtitle": "שילבנו יכולות אסטרטגיה, טכנולוגיה, עיצוב ושיווק שישמרו עליכם ייחודיים ונחשקים. כך שגם אם יהיה כאן שלטון מכונות, נדאג שהן ישתוקקו לעבוד אתכם."
+  },
+  "callToAction": {
+    "text": "בואו להניע פרויקט"
+  },
+  "work": {
+    "title": "עבודות",
+    "viewAll": "לכל הפרויקטים"
+  },
+  "ventures": {
+    "title": "venture Lab for Bold Ideas",
+    "description": "חדשנות, יצירתיות וחשיבה פורצת דרך שלוקחת מיזמים חדשים עד לקצה",
+    "cta": "בואו נדבר"
+  },
+  "follow": {
+    "title": "תהיו חברים"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "מייל אחד שווה אלף תובנות",
+      "placeholder": "כתובת המייל שלך",
+      "success": "נרשמת בהצלחה!"
+    },
+    "company": {
+      "title": "חברה",
+      "about": "עלינו",
+      "work": "עבודות",
+      "career": "קריירה",
+      "blog": "בלוג",
+      "contact": "צור קשר",
+      "english": "English"
+    },
+    "departments": {
+      "title": "מחלקות",
+      "development": "פיתוח",
+      "designStrategy": "עיצוב ואסטרטגיה",
+      "digitalMarketing": "שיווק דיגיטלי",
+      "uxui": "UX/UI"
+    },
+    "social": {
+      "title": "סושיאל",
+      "instagram": "אינטסגרם",
+      "linkedin": "לינקדין",
+      "instagramPage": "עמוד האינטסגרם",
+      "linkedinPage": "עמוד הלינקדין"
+    },
+    "legal": {
+      "policy": "מדיניות",
+      "privacy": "פרטיות"
+    }
+  }
+}

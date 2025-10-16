@@ -90,6 +90,10 @@
   width: 28px;
   max-height: 28px;
   transition: transform 0.3s ease;
+
+  [dir='ltr'] & {
+    transform: scaleX(-1);
+  }
 }
 
 .ventures__cta-button:hover {
@@ -98,11 +102,20 @@
 
 .ventures__cta-button:hover .ventures__cta-icon {
   transform: translateX(-4px);
+
+  [dir='ltr'] & {
+    transform: translateX(4px) scaleX(-1);
+  }
 }
 
 @media (max-width: 768px) {
   .ventures__text-container {
     max-width: 100%;
+  }
+
+  .ventures__video-container {
+    width: 200%;
+    margin-inline-start: -50%;
   }
 }
 

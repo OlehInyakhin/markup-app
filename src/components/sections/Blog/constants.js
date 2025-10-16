@@ -7,31 +7,31 @@ import blogImage05 from '@/assets/images/blog/blog-image-05.webp';
 export const blogPosts = [
   {
     id: 1,
-    title: 'כותרת הפוסט הראשון',
+    titleKey: 'posts.post1.title',
     image: blogImage01,
     url: 'https://www.google.com/',
   },
   {
     id: 2,
-    title: 'כותרת הפוסט הראשון',
+    titleKey: 'posts.post2.title',
     image: blogImage02,
     url: 'https://www.google.com/',
   },
   {
     id: 3,
-    title: 'כותרת הפוסט הראשון',
+    titleKey: 'posts.post3.title',
     image: blogImage03,
     url: 'https://www.google.com/',
   },
   {
     id: 4,
-    title: 'כותרת הפוסט הראשון',
+    titleKey: 'posts.post4.title',
     image: blogImage04,
     url: 'https://www.google.com/',
   },
   {
     id: 5,
-    title: 'כותרת הפוסט הראשון',
+    titleKey: 'posts.post5.title',
     image: blogImage05,
     url: 'https://www.google.com/',
   },

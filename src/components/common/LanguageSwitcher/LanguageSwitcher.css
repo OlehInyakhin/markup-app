@@ -1,0 +1,20 @@
+.language-switcher {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+/* Mobile styles for header context */
+@media (max-width: 767px) {
+  .header__nav--open .language-switcher {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .header__nav--open .language-switcher:hover {
+    opacity: 0.8;
+  }
+}

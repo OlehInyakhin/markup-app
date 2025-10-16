@@ -9,7 +9,7 @@
   height: 110px;
   border-radius: 50%;
   background: #ffffff;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   pointer-events: none; /* let mouse events pass through */
   transform: translate3d(-9999px, -9999px, 0);
   transition: opacity 120ms ease;
@@ -27,7 +27,7 @@
   display: block;
   stroke: var(--color-text-primary);
 
-  [dir="ltr"] & {
+  [dir='ltr'] & {
     rotate: 180deg;
   }
 }

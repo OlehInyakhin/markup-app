@@ -77,7 +77,6 @@
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.56px;
-  text-transform: uppercase;
   margin: 0;
   color: var(--color-grey-middle, #6b6c6d);
   transition: color 0.3s ease;

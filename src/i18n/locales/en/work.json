@@ -1,0 +1,31 @@
+{
+  "title": "Work",
+  "viewAll": "All Projects",
+  "projects": {
+    "project1": {
+      "title": "Project Name",
+      "description": "Brief explanation about the project"
+    },
+    "project2": {
+      "title": "Project Name",
+      "description": "Brief explanation about the project"
+    },
+    "project3": {
+      "title": "Project Name",
+      "description": "Brief explanation about the project"
+    },
+    "project4": {
+      "title": "Feeel",
+      "description": "Brief explanation about the project"
+    }
+  },
+  "tags": {
+    "websites": "Websites",
+    "branding": "Branding",
+    "design": "Design",
+    "applications": "Applications",
+    "uxui": "UX/UI",
+    "integrations": "Integration & API Development",
+    "ecommerce": "E-commerce Platform Development"
+  }
+}

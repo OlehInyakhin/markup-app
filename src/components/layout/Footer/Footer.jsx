@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import Arrow from '@/assets/images/icons/arrow-right-white.svg?react';
 import footerLogoSrc from '@/assets/images/logos/footer-logo.svg';
 import logoSrc from '@/assets/images/logos/logo.svg';
@@ -6,9 +7,11 @@ import imageSrc from '@/assets/images/footer-image.png';
 import Instagram from '@/assets/images/icons/instagram.svg?react';
 import LinkedIn from '@/assets/images/icons/linkedin.svg?react';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
+import { LanguageSwitcher } from '@/components/common/LanguageSwitcher';
 import './Footer.css';
 
 export const Footer = () => {
+  const { t } = useTranslation('footer', 'common');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const footerRef = useRef(null);
   const { staggerAnimation, fadeInUp, scaleOnScroll } = useGSAPAnimations();
@@ -56,11 +59,11 @@ export const Footer = () => {
                 className="footer__subscription-form"
                 onSubmit={handleSubscribe}
               >
-                <h3 className="footer__form-title">מייל אחד שווה אלף תובנות</h3>
+                <h3 className="footer__form-title">{t('newsletter.title')}</h3>
                 <div className="footer__input-group">
                   <input
                     type="email"
-                    placeholder="כתובת המייל שלך"
+                    placeholder={t('newsletter.placeholder')}
                     className="footer__email-input"
                     required
                   />
@@ -70,7 +73,7 @@ export const Footer = () => {
                 </div>
                 {isSubscribed && (
                   <div className="footer__success-message">
-                    ✓ Subscribed successfully!
+                    ✓ {t('newsletter.success')}
                   </div>
                 )}
               </form>
@@ -78,79 +81,93 @@ export const Footer = () => {
 
             <div className="footer__links">
               <div className="footer__column">
-                <h4 className="footer__title">חברה</h4>
+                <h4 className="footer__title">{t('company.title')}</h4>
                 <ul className="footer__list">
                   <li>
                     <a href="#" className="footer__link">
-                      עלינו
+                      {t('company.about')}
                     </a>
                   </li>
                   <li>
                     <a href="#" className="footer__link">
-                      עבודות
+                      {t('company.work')}
                     </a>
                   </li>
                   <li>
                     <a href="#" className="footer__link">
-                      קריירה
+                      {t('company.career')}
                     </a>
                   </li>
                   <li>
                     <a href="#" className="footer__link">
-                      בלוג
+                      {t('company.blog')}
                     </a>
                   </li>
                   <li>
                     <a href="#" className="footer__link">
-                      צור קשר
+                      {t('company.contact')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="footer__link">
-                      English
-                    </a>
+                    <LanguageSwitcher>
+                      <span className="footer__link">
+                        {t('language', { ns: 'common' })}
+                      </span>
+                    </LanguageSwitcher>
                   </li>
                 </ul>
               </div>
 
               <div className="footer__column">
-                <h4 className="footer__title">מחלקות</h4>
+                <h4 className="footer__title">{t('departments.title')}</h4>
                 <ul className="footer__list">
                   <li>
                     <a href="#" className="footer__link">
-                      פיתוח
+                      {t('departments.development')}
                     </a>
                   </li>
                   <li>
                     <a href="#" className="footer__link">
-                      עיצוב ואסטרטגיה
+                      {t('departments.designStrategy')}
                     </a>
                   </li>
                   <li>
                     <a href="#" className="footer__link">
-                      שיווק דיגיטלי
+                      {t('departments.digitalMarketing')}
                     </a>
                   </li>
                   <li>
                     <a href="#" className="footer__link">
-                      UX/UI
+                      {t('departments.uxui')}
                     </a>
                   </li>
                 </ul>
               </div>
 
               <div className="footer__column footer__column--socials">
-                <h4 className="footer__title">סושיאל</h4>
+                <h4 className="footer__title">{t('social.title')}</h4>
                 <ul className="footer__list">
                   <li>
-                    <a href="#" className="footer__link" title="עמוד האינטסגרם">
-                      <span className="footer__link-text">אינטסגרם</span>
+                    <a
+                      href="#"
+                      className="footer__link"
+                      title={t('social.instagramPage')}
+                    >
+                      <span className="footer__link-text">
+                        {t('social.instagram')}
+                      </span>
                       <Instagram className="footer__link-icon" />
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="footer__link" title="עמוד הלינקדין">
-                      <span className="footer__link-text">לינקדין</span>
+                    <a
+                      href="#"
+                      className="footer__link"
+                      title={t('social.linkedinPage')}
+                    >
+                      <span className="footer__link-text">
+                        {t('social.linkedin')}
+                      </span>
                       <LinkedIn className="footer__link-icon" />
                     </a>
                   </li>
@@ -181,10 +198,10 @@ export const Footer = () => {
               </p>
               <div className="footer__legal">
                 <a href="#" className="footer__link">
-                  מדיניות
+                  {t('legal.policy')}
                 </a>
                 <a href="#" className="footer__link">
-                  פרטיות
+                  {t('legal.privacy')}
                 </a>
               </div>
             </div>

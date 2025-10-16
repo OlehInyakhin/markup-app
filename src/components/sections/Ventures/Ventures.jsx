@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Ventures.css';
 import ArrowLeft from '@/assets/images/icons/arrow-left.svg?react';
 import bgVideo from '@/assets/media/hybrid.mp4';
@@ -6,6 +7,7 @@ import useVideoVisibility from '@/hooks/useVideoVisibility';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
 
 export const Ventures = () => {
+  const { t } = useTranslation('ventures');
   const { videoRef, sectionRef } = useVideoVisibility();
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
@@ -27,7 +29,7 @@ export const Ventures = () => {
   }, [fadeInUp, slideInLeft]);
 
   return (
-    <section className="ventures" ref={sectionRef}>
+    <section className="ventures" ref={sectionRef} id="ventures">
       <div className="ventures__video-container">
         <video
           className="ventures__video"
@@ -42,14 +44,13 @@ export const Ventures = () => {
       <div className="container">
         <div className="ventures__content">
           <h2 className="ventures__title" ref={titleRef}>
-            venture Lab for Bold Ideas{' '}
+            {t('title')}
           </h2>
           <p className="ventures__description" ref={descriptionRef}>
-            חדשנות, יצירתיות וחשיבה פורצת דרך <br />
-            שלוקחת מיזמים חדשים עד לקצה
+            {t('description')}
           </p>
           <a href="#" className="ventures__cta-button" ref={ctaRef}>
-            בואו נדבר
+            {t('cta')}
             <ArrowLeft className="ventures__cta-icon" />
           </a>
         </div>

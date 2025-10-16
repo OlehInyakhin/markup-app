@@ -127,30 +127,33 @@ export const useGSAPAnimations = () => {
     );
   };
 
-  const staggerAnimation = useCallback((elements, delay = 0.2, startDelay = 0) => {
-    const config = getAnimationConfig({
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power2.out',
-      stagger: prefersReducedMotion() ? 0 : delay,
-      delay: startDelay,
-      scrollTrigger: {
-        trigger: elements[0],
-        start: 'top 80%',
-        toggleActions: 'play none none none',
-      },
-    });
+  const staggerAnimation = useCallback(
+    (elements, delay = 0.2, startDelay = 0) => {
+      const config = getAnimationConfig({
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        stagger: prefersReducedMotion() ? 0 : delay,
+        delay: startDelay,
+        scrollTrigger: {
+          trigger: elements[0],
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      });
 
-    gsap.fromTo(
-      elements,
-      {
-        opacity: 0,
-        y: prefersReducedMotion() ? 0 : 30,
-      },
-      config
-    );
-  }, []);
+      gsap.fromTo(
+        elements,
+        {
+          opacity: 0,
+          y: prefersReducedMotion() ? 0 : 30,
+        },
+        config
+      );
+    },
+    []
+  );
 
   const parallaxEffect = (element, speed = 0.5) => {
     // Skip parallax effect if user prefers reduced motion
@@ -170,27 +173,30 @@ export const useGSAPAnimations = () => {
     });
   };
 
-  const scaleOnScroll = useCallback((element, fromScale = 0.8, toScale = 1, delay = 0) => {
-    const config = getAnimationConfig({
-      scale: toScale,
-      duration: 1,
-      delay: delay,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: element,
-        start: 'top 80%',
-        toggleActions: 'play none none none',
-      },
-    });
+  const scaleOnScroll = useCallback(
+    (element, fromScale = 0.8, toScale = 1, delay = 0) => {
+      const config = getAnimationConfig({
+        scale: toScale,
+        duration: 1,
+        delay: delay,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      });
 
-    gsap.fromTo(
-      element,
-      {
-        scale: prefersReducedMotion() ? toScale : fromScale,
-      },
-      config
-    );
-  }, []);
+      gsap.fromTo(
+        element,
+        {
+          scale: prefersReducedMotion() ? toScale : fromScale,
+        },
+        config
+      );
+    },
+    []
+  );
 
   // Fade in from top animation
   const fadeInDown = (element, delay = 0, duration = 1) => {

@@ -1,0 +1,72 @@
+{
+  "navigation": {
+    "services": "Services",
+    "about": "About",
+    "work": "Work",
+    "blog": "Blog",
+    "career": "Career",
+    "contact": "Contact"
+  },
+  "language": "עברית",
+  "buttons": {
+    "readMore": "Read More",
+    "viewProject": "View Project",
+    "contact": "Contact",
+    "submit": "Submit",
+    "letsTalk": "Let's Talk",
+    "allProjects": "All Projects"
+  },
+  "hero": {
+    "title": "No matter what the future looks like, we'll make sure you're part of it",
+    "subtitle": "We've combined strategy, technology, design and marketing capabilities that will keep you unique and desirable. So even if there's a robot takeover, we'll make sure they want to work with you."
+  },
+  "callToAction": {
+    "text": "Let's start a project"
+  },
+  "work": {
+    "title": "Work",
+    "viewAll": "All Projects"
+  },
+  "ventures": {
+    "title": "venture Lab for Bold Ideas",
+    "description": "Innovation, creativity and breakthrough thinking that takes new ventures to the edge",
+    "cta": "Let's Talk"
+  },
+  "follow": {
+    "title": "Be Friends"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "One email equals a thousand insights",
+      "placeholder": "Your email address",
+      "success": "Subscribed successfully!"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "work": "Work",
+      "career": "Career",
+      "blog": "Blog",
+      "contact": "Contact",
+      "english": "English"
+    },
+    "departments": {
+      "title": "Departments",
+      "development": "Development",
+      "designStrategy": "Design & Strategy",
+      "digitalMarketing": "Digital Marketing",
+      "uxui": "UX/UI"
+    },
+    "social": {
+      "title": "Social",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "instagramPage": "Instagram page",
+      "linkedinPage": "LinkedIn page"
+    },
+    "legal": {
+      "policy": "Policy",
+      "privacy": "Privacy"
+    }
+  }
+}

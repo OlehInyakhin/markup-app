@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
 import './Hero.css';
 
 export const Hero = () => {
+  const { t } = useTranslation('hero');
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const { fadeInUp } = useGSAPAnimations();
@@ -18,11 +20,10 @@ export const Hero = () => {
     <section className="hero">
       <div className="container">
         <h1 ref={titleRef} className="hero__title">
-          לא משנה איך יראה העתיד, נדאג שתהיו חלק ממנו
+          {t('title')}
         </h1>
         <p ref={subtitleRef} className="hero__subtitle">
-          שילבנו יכולות אסטרטגיה, טכנולוגיה, עיצוב ושיווק שישמרו עליכם ייחודיים
-          ונחשקים. כך שגם אם יהיה כאן שלטון מכונות, נדאג שהן ישתוקקו לעבוד אתכם.
+          {t('subtitle')}
         </p>
       </div>
     </section>

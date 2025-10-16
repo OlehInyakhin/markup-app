@@ -1,0 +1,10 @@
+{
+  "navigation": {
+    "services": "Services",
+    "about": "About",
+    "work": "Work",
+    "blog": "Blog",
+    "career": "Career",
+    "contact": "Contact"
+  }
+}

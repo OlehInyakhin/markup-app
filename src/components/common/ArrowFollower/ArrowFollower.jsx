@@ -12,11 +12,11 @@ export const ArrowFollower = ({ containerRef, hideOnHoverSelectors = [] }) => {
 
   useEffect(() => {
     // Disable on touch/coarse pointers (mobile/tablet) where hover is not available
-    const hasCoarsePointer = typeof window !== 'undefined' && (
-      window.matchMedia('(hover: none)').matches ||
-      window.matchMedia('(pointer: coarse)').matches ||
-      (navigator && navigator.maxTouchPoints > 0)
-    );
+    const hasCoarsePointer =
+      typeof window !== 'undefined' &&
+      (window.matchMedia('(hover: none)').matches ||
+        window.matchMedia('(pointer: coarse)').matches ||
+        (navigator && navigator.maxTouchPoints > 0));
     setDisabled(Boolean(hasCoarsePointer));
   }, []);
 
@@ -35,7 +35,7 @@ export const ArrowFollower = ({ containerRef, hideOnHoverSelectors = [] }) => {
         isOnHideTarget = hideOnHoverSelectors.some(sel => {
           try {
             return el.closest(sel);
-          } catch (_) {
+          } catch {
             return false;
           }
         });
@@ -90,8 +90,12 @@ export const ArrowFollower = ({ containerRef, hideOnHoverSelectors = [] }) => {
         window.removeEventListener('pointermove', handleWindowPointerMove);
         window.removeEventListener('pointerup', handleWindowPointerUp);
       };
-      window.addEventListener('pointermove', handleWindowPointerMove, { passive: true });
-      window.addEventListener('pointerup', handleWindowPointerUp, { passive: true });
+      window.addEventListener('pointermove', handleWindowPointerMove, {
+        passive: true,
+      });
+      window.addEventListener('pointerup', handleWindowPointerUp, {
+        passive: true,
+      });
     };
 
     container.addEventListener('pointerenter', onPointerEnter);

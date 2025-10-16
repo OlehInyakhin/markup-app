@@ -1,0 +1,31 @@
+{
+  "title": "עבודות",
+  "viewAll": "לכל הפרויקטים",
+  "projects": {
+    "project1": {
+      "title": "שם פרויקט",
+      "description": "הסבר בשתי מילים על הפרויקט"
+    },
+    "project2": {
+      "title": "שם פרויקט",
+      "description": "הסבר בשתי מילים על הפרויקט"
+    },
+    "project3": {
+      "title": "שם פרויקט",
+      "description": "הסבר בשתי מילים על הפרויקט"
+    },
+    "project4": {
+      "title": "Feeel",
+      "description": "הסבר בשתי מילים על הפרויקט"
+    }
+  },
+  "tags": {
+    "websites": "אתרים",
+    "branding": "מיתוג",
+    "design": "עיצוב",
+    "applications": "אפליקציות",
+    "uxui": "UX/UI",
+    "integrations": "פיתוח אינטגרציות ו-API",
+    "ecommerce": "פיתוח פלטפורמת סחר"
+  }
+}

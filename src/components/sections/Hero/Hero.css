@@ -23,7 +23,6 @@
   color: var(--bg-tertiary);
   font-size: var(--font-size-h1);
   letter-spacing: 1px;
-  text-transform: uppercase;
   width: 100%;
   margin: 0 0 var(--space-2xl);
 }

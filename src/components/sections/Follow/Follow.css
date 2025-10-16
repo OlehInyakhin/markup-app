@@ -57,12 +57,20 @@
 
 .follow__image--1 {
   top: 30%;
-  transform: rotate(26deg);
+  transform: rotate(-26deg);
+
+  [dir='rtl'] & {
+    transform: rotate(26deg);
+  }
 }
 
 .follow__image--2 {
   top: 7%;
-  transform: rotate(12deg);
+  transform: rotate(-12deg);
+
+  [dir='rtl'] & {
+    transform: rotate(12deg);
+  }
 }
 
 .follow__image--3 img {
@@ -71,12 +79,20 @@
 
 .follow__image--4 {
   top: 7%;
-  transform: rotate(-12deg);
+  transform: rotate(12deg);
+
+  [dir='rtl'] & {
+    transform: rotate(-12deg);
+  }
 }
 
 .follow__image--5 {
   top: 30%;
-  transform: rotate(-26deg);
+  transform: rotate(26deg);
+
+  [dir='rtl'] & {
+    transform: rotate(-26deg);
+  }
 }
 
 .follow__actions {

@@ -4,7 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useMarqueeAnimation = (duration = 30, sectionRef = null) => {
+const useMarqueeAnimation = (
+  duration = 30,
+  sectionRef = null,
+  direction = 'rtl'
+) => {
   const scrollingRef = useRef(null);
   const animationRef = useRef(null);
   const scrollTriggerRef = useRef(null);
@@ -14,18 +18,41 @@ const useMarqueeAnimation = (duration = 30, sectionRef = null) => {
     if (!scrollingElement) return;
 
     const scrollWidth = scrollingElement.scrollWidth / 2;
-    animationRef.current = gsap.fromTo(
-      scrollingElement,
-      {
-        x: 0,
-      },
-      {
-        x: -scrollWidth,
-        duration: duration,
-        ease: 'none',
-        repeat: -1,
-      }
-    );
+
+    // Determine animation direction based on text direction
+    // RTL: move from right to left (negative x)
+    // LTR: move from left to right (positive x, then reset)
+    const isRTL = direction === 'rtl';
+
+    if (isRTL) {
+      // RTL: Start from right (0) and move left (-scrollWidth)
+      animationRef.current = gsap.fromTo(
+        scrollingElement,
+        {
+          x: 0,
+        },
+        {
+          x: -scrollWidth,
+          duration: duration,
+          ease: 'none',
+          repeat: -1,
+        }
+      );
+    } else {
+      // LTR: Start from left (-scrollWidth) and move right (0)
+      animationRef.current = gsap.fromTo(
+        scrollingElement,
+        {
+          x: -scrollWidth,
+        },
+        {
+          x: 0,
+          duration: duration,
+          ease: 'none',
+          repeat: -1,
+        }
+      );
+    }
 
     if (sectionRef?.current) {
       scrollTriggerRef.current = ScrollTrigger.create({
@@ -63,7 +90,7 @@ const useMarqueeAnimation = (duration = 30, sectionRef = null) => {
         scrollTriggerRef.current.kill();
       }
     };
-  }, [duration, sectionRef]);
+  }, [duration, sectionRef, direction]);
 
   return { scrollingRef };
 };

@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import './TextAndLogo.css';
 import spinLogo from '@/assets/images/logos/spin-logo.svg';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
 
 export const TextAndLogo = () => {
+  const { t } = useTranslation('textAndLogo');
   const logoRef = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
@@ -23,27 +25,24 @@ export const TextAndLogo = () => {
     }
   }, [fadeInUp, slideInLeft]);
   return (
-    <section className="text-and-logo">
+    <section className="text-and-logo" id="text-and-logo">
       <div className="container text-and-logo__container">
         <div className="text-and-logo__logo-column">
           <div className="text-and-logo__logo-container">
             <img
               ref={logoRef}
               src={spinLogo}
-              alt="SPIN Logo"
+              alt={t('logoAlt')}
               className="text-and-logo__logo"
             />
           </div>
         </div>
         <div className="text-and-logo__text-column">
           <h2 ref={titleRef} className="text-and-logo__title">
-            בעולם דינמי, אינטראקטיבי והיפראקטיבי - נדרשת גישה משולבת
+            {t('title')}
           </h2>
           <p ref={descriptionRef} className="text-and-logo__description">
-            מוסן מנת. להאמית קרהשק סכעיט דז מא, מנכם למטכין נשואי מנורך. צש
-            בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. הועניב
-            היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף.
-            זותה מנק הבקיץ אפאח דלאמת יבש, כאנה ניצאחו נמרגי שהכים תוק.
+            {t('description')}
           </p>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Services.css';
 import {
   services,
@@ -10,6 +11,7 @@ import useVideoVisibility from '@/hooks/useVideoVisibility';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
 
 export const Services = () => {
+  const { t } = useTranslation('services');
   const [activeService, setActiveService] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const { videoRef, sectionRef } = useVideoVisibility();
@@ -74,7 +76,7 @@ export const Services = () => {
                     className="services__arrow"
                   />
                 </div>
-                <h3 className="services__item-title">{service.title}</h3>
+                <h3 className="services__item-title">{t(service.titleKey)}</h3>
               </div>
               {index !== services.length - 1 && (
                 <div className="services__line"></div>

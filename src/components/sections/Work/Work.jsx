@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Work.css';
@@ -7,6 +8,8 @@ import { projects } from './constants';
 gsap.registerPlugin(ScrollTrigger);
 
 export const Work = () => {
+  const { t } = useTranslation('work');
+
   const slideInLeftReverse = (element, delay = 0, duration = 1) => {
     gsap.fromTo(
       element,
@@ -130,12 +133,12 @@ export const Work = () => {
     }
   }, []);
   return (
-    <section className="work">
+    <section className="work" id="work">
       <div className="container">
         <header className="work__header">
-          <h2 className="work__main-title">עבודות</h2>
+          <h2 className="work__main-title">{t('title')}</h2>
           <a href="#" className="work__view-all">
-            לכל הפרויקטים
+            {t('viewAll')}
           </a>
         </header>
       </div>
@@ -146,19 +149,21 @@ export const Work = () => {
             className={`work__block work__block--${index % 2 === 0 ? 'left' : 'right'}`}
           >
             <div className="work__block-image">
-              <img src={project.image} alt={project.title} />
+              <img src={project.image} alt={t(project.titleKey)} />
             </div>
 
             <div className="work__block-content">
-              <h3 className="work__block-title">{project.title}</h3>
+              <h3 className="work__block-title">{t(project.titleKey)}</h3>
               <div className="work__block-logo">
-                <img src={project.logo} alt={`${project.title} logo`} />
+                <img src={project.logo} alt={`${t(project.titleKey)} logo`} />
               </div>
-              <p className="work__block-description">{project.description}</p>
+              <p className="work__block-description">
+                {t(project.descriptionKey)}
+              </p>
               <div className="work__block-tags">
                 {project.tags.map((tag, tagIndex) => (
                   <h4 key={tagIndex} className="work__block-tag">
-                    {tag}
+                    {t(tag)}
                   </h4>
                 ))}
               </div>

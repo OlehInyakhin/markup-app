@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Showreel.css';
 import { PlayButton } from '@/components/common/PlayButton';
 
@@ -6,6 +7,8 @@ import showreelBackground from '@/assets/images/showreel-background.webp';
 import showreelVideo from '@/assets/media/showreel.mp4';
 
 export const Showreel = () => {
+  const { t } = useTranslation('showreel');
+
   const handlePlayClick = () => {
     const video = document.querySelector('.showreel__video');
     if (video) {
@@ -45,7 +48,7 @@ export const Showreel = () => {
   }, []);
 
   return (
-    <section className="showreel">
+    <section className="showreel" id="showreel">
       <div className="showreel__video-container">
         <video
           className="showreel__video"
@@ -53,7 +56,7 @@ export const Showreel = () => {
           controls={false}
         >
           <source src={showreelVideo} type="video/mp4" />
-          Your browser does not support the video tag.
+          {t('videoNotSupported')}
         </video>
       </div>
       <div className="showreel__play-overlay" onClick={handlePlayClick}>

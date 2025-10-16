@@ -1,0 +1,33 @@
+{
+  "newsletter": {
+    "title": "One email equals a thousand insights",
+    "placeholder": "Your email address",
+    "success": "Subscribed successfully!"
+  },
+  "company": {
+    "title": "Company",
+    "about": "About",
+    "work": "Work",
+    "career": "Career",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "departments": {
+    "title": "Departments",
+    "development": "Development",
+    "designStrategy": "Design & Strategy",
+    "digitalMarketing": "Digital Marketing",
+    "uxui": "UX/UI"
+  },
+  "social": {
+    "title": "Social",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "instagramPage": "Instagram page",
+    "linkedinPage": "LinkedIn page"
+  },
+  "legal": {
+    "policy": "Policy",
+    "privacy": "Privacy"
+  }
+}

@@ -7,6 +7,7 @@ import 'swiper/css/scrollbar';
 import './Collaborations.css';
 import { useGSAPAnimations } from '@/hooks/useGSAPAnimations';
 import { ArrowFollower } from '@/components/common/ArrowFollower/ArrowFollower.jsx';
+import { useTranslation } from 'react-i18next';
 
 import { collaborations } from './constants';
 
@@ -15,6 +16,11 @@ export const Collaborations = () => {
   const sectionRef = useRef(null);
   const galleryRef = useRef(null);
   const { fadeInUp, staggerAnimation } = useGSAPAnimations();
+  const {
+    i18n: { dir },
+    t,
+  } = useTranslation('collaborations');
+  const direction = dir() ?? 'rtl';
 
   useEffect(() => {
     if (titleRef.current) {
@@ -36,20 +42,21 @@ export const Collaborations = () => {
   }, [fadeInUp, staggerAnimation]);
 
   return (
-    <section className="collaborations" ref={sectionRef}>
+    <section className="collaborations" ref={sectionRef} id="collaborations">
       <div className="container collaborations__container">
         <header className="collaborations__header">
           <h1 className="collaborations__title" ref={titleRef}>
-            שיתופי פעולה בולטים
+            {t('title')}
           </h1>
         </header>
 
         <div className="collaborations__gallery-container" ref={galleryRef}>
           <ArrowFollower
             containerRef={galleryRef}
-            hideOnHoverSelectors={[ '.collaborations__card-content' ]}
+            hideOnHoverSelectors={['.collaborations__card-content']}
           />
           <Swiper
+            key={`collaborations-swiper-${direction}`}
             className="collaborations__swiper"
             modules={[FreeMode, Scrollbar]}
             spaceBetween={30}
@@ -69,6 +76,7 @@ export const Collaborations = () => {
                 spaceBetween: 96,
               },
             }}
+            dir={direction}
           >
             {collaborations.map(collaboration => (
               <SwiperSlide
@@ -79,7 +87,7 @@ export const Collaborations = () => {
                   <div className="collaborations__card-logo">
                     <img
                       src={collaboration.logo}
-                      alt={collaboration.name}
+                      alt={t(collaboration.nameKey)}
                       loading="lazy"
                     />
                   </div>
@@ -90,11 +98,11 @@ export const Collaborations = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {collaboration.name}
+                        {t(collaboration.nameKey)}
                       </a>
                     </h3>
                     <p className="collaborations__card-description">
-                      {collaboration.description}
+                      {t(collaboration.descriptionKey)}
                     </p>
                   </div>
                 </div>

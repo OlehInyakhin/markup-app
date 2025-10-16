@@ -43,7 +43,7 @@ export const Logos = () => {
         <div className="logos__row logos__row--first">
           <div className="logos__track" ref={firstTrackRef}>
             {[...firstRowLogos, ...firstRowLogos].map((logo, index) => (
-              <div key={`first-${index}`} className="logos__item">
+              <div key={`logos-row-first-${index}`} className="logos__item">
                 <img src={logo.src} alt={logo.alt} className="logos__image" />
               </div>
             ))}
@@ -53,7 +53,7 @@ export const Logos = () => {
         <div className="logos__row logos__row--second">
           <div className="logos__track" ref={secondTrackRef}>
             {[...secondRowLogos, ...secondRowLogos].map((logo, index) => (
-              <div key={`second-${index}`} className="logos__item">
+              <div key={`logos-row-second-${index}`} className="logos__item">
                 <img src={logo.src} alt={logo.alt} className="logos__image" />
               </div>
             ))}

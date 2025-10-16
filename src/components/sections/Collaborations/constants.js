@@ -4,49 +4,43 @@ import collabLogo02 from '@/assets/images/collaborations/collab-logo-02.svg';
 export const collaborations = [
   {
     id: 1,
-    name: 'HMC הרצליה מדיקל סנטר',
-    description:
-      'קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה.',
+    nameKey: 'collaborations.collaboration1.name',
+    descriptionKey: 'collaborations.collaboration1.description',
     logo: collabLogo01,
     url: 'https://www.google.com/',
   },
   {
     id: 2,
-    name: 'HMC הרצליה מדיקל סנטר',
-    description:
-      'קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה.',
+    nameKey: 'collaborations.collaboration1.name',
+    descriptionKey: 'collaborations.collaboration1.description',
     logo: collabLogo01,
     url: 'https://www.google.com/',
   },
   {
     id: 3,
-    name: 'HMC הרצליה מדיקל סנטר',
-    description:
-      'קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה.',
+    nameKey: 'collaborations.collaboration1.name',
+    descriptionKey: 'collaborations.collaboration1.description',
     logo: collabLogo01,
     url: 'https://www.google.com/',
   },
   {
     id: 4,
-    name: 'נוי השדה',
-    description:
-      'קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. ',
+    nameKey: 'collaborations.collaboration2.name',
+    descriptionKey: 'collaborations.collaboration2.description',
     logo: collabLogo02,
     url: 'https://www.google.com/',
   },
   {
     id: 5,
-    name: 'נוי השדה',
-    description:
-      'קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. ',
+    nameKey: 'collaborations.collaboration2.name',
+    descriptionKey: 'collaborations.collaboration2.description',
     logo: collabLogo02,
     url: 'https://www.google.com/',
   },
   {
     id: 6,
-    name: 'נוי השדה',
-    description:
-      'קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. ',
+    nameKey: 'collaborations.collaboration2.name',
+    descriptionKey: 'collaborations.collaboration2.description',
     logo: collabLogo02,
     url: 'https://www.google.com/',
   },

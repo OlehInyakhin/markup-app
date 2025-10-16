@@ -1,0 +1,25 @@
+{
+  "title": "Notable Collaborations",
+  "collaborations": {
+    "collaboration1": {
+      "name": "HMC Herzliya Medical Center",
+      "description": "Brief explanation about the collaboration"
+    },
+    "collaboration2": {
+      "name": "Noy Hasadeh",
+      "description": "Brief explanation about the collaboration"
+    },
+    "collaboration3": {
+      "name": "Collaboration Name",
+      "description": "Brief explanation about the collaboration"
+    },
+    "collaboration4": {
+      "name": "Collaboration Name",
+      "description": "Brief explanation about the collaboration"
+    },
+    "collaboration5": {
+      "name": "Collaboration Name",
+      "description": "Brief explanation about the collaboration"
+    }
+  }
+}

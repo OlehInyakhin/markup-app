@@ -1,0 +1,33 @@
+{
+  "newsletter": {
+    "title": "מייל אחד שווה אלף תובנות",
+    "placeholder": "כתובת המייל שלך",
+    "success": "נרשמת בהצלחה!"
+  },
+  "company": {
+    "title": "חברה",
+    "about": "עלינו",
+    "work": "עבודות",
+    "career": "קריירה",
+    "blog": "בלוג",
+    "contact": "צור קשר"
+  },
+  "departments": {
+    "title": "מחלקות",
+    "development": "פיתוח",
+    "designStrategy": "עיצוב ואסטרטגיה",
+    "digitalMarketing": "שיווק דיגיטלי",
+    "uxui": "UX/UI"
+  },
+  "social": {
+    "title": "רשתות חברתיות",
+    "instagram": "אינסטגרם",
+    "linkedin": "לינקדאין",
+    "instagramPage": "עמוד אינסטגרם",
+    "linkedinPage": "עמוד לינקדאין"
+  },
+  "legal": {
+    "policy": "מדיניות",
+    "privacy": "פרטיות"
+  }
+}
