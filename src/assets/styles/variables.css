@@ -135,8 +135,7 @@
   --container-padding-mobile: 20px; /* Mobile padding */
 
   --header-height: 103px; /* Navigation menu height */
-  --hero-height: 702px; /* Header section height */
-  --showreel-height: 1103px; /* Showreel section height */
+  --header-height-mobile: 52px; /* Navigation menu height */
   --logo-size: 169px; /* Logo container size */
   --play-button-size: 200px; /* Play button size */
 

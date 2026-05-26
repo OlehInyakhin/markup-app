@@ -3,13 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { useScrollDirection } from '@/hooks/useScrollDirection';
 import logoSrc from '@/assets/images/logos/logo.svg';
-import arrowIcon from '@/assets/images/icons/arrow-down.svg';
+import ArrowIcon from '@/assets/images/icons/arrow-down.svg?react';
 import { LanguageSwitcher } from '@/components/common/LanguageSwitcher';
+import { ServicesDropdown } from './ServicesDropdown';
 import './Header.css';
 
 export const Header = () => {
   const { t } = useTranslation('header', 'common');
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const headerRef = useRef(null);
   const { isVisible } = useScrollDirection();
 
@@ -37,6 +39,16 @@ export const Header = () => {
 
   const closeMobileNav = () => {
     setIsMobileNavOpen(false);
+    setIsServicesDropdownOpen(false);
+  };
+
+  const toggleServicesDropdown = (e) => {
+    e.preventDefault();
+    setIsServicesDropdownOpen(!isServicesDropdownOpen);
+  };
+
+  const closeServicesDropdown = () => {
+    setIsServicesDropdownOpen(false);
   };
 
   const handleAnchorClick = e => {
@@ -76,18 +88,20 @@ export const Header = () => {
             <ul className="nav-list">
               <li className="nav-item-with-icon">
                 <a
-                  href="#"
-                  className="nav-link nav-link--with-icon"
-                  onClick={closeMobileNav}
+                  href="#services"
+                  className={`nav-link nav-link--with-icon ${isServicesDropdownOpen ? 'active' : ''}`}
+                  onClick={toggleServicesDropdown}
                 >
                   <span>{t('navigation.services')}</span>
-                  <img
-                    src={arrowIcon}
-                    alt="nav icon"
-                    className="nav-icon"
+                  <ArrowIcon
+                    className={`nav-icon ${isServicesDropdownOpen ? 'rotated' : ''}`}
                     aria-hidden="true"
                   />
                 </a>
+                <ServicesDropdown 
+                  isOpen={isServicesDropdownOpen} 
+                  onClose={closeServicesDropdown}
+                />
               </li>
               <li>
                 <a
